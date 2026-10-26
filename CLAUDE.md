@@ -28,7 +28,7 @@ Drop this file in as `CLAUDE.md` at the repo root (or `~/.claude/CLAUDE.md`). Ev
 - **Differentiation:** "Halapeno Homes isn't your average coliving setup. It's small, handpicked, and full of character, where strangers turn into your people, not just faceless flatmates. Safety here comes with real freedom, not curfews, and premium living that doesn't ask you to compromise on who you are. Because we're not just renting rooms, we're building a home with a little personality, one that finally feels like ghar."
 - **Target audience:** 20–30 years old; working professionals; students of reputed colleges (Nirma University is next door to the home).
 - **Colours (the ONLY four allowed):** `#eadccc` cream · `#7c714e` olive · `#543e2c` brown · `#9d8164` tan.
-- **Fonts:** Arial MT Pro (text), Helvetica World (headings), Magnolia Script (cursive accent). Web stand-ins: Helvetica Neue/Helvetica → Arial stack; **Pinyon Script** (Google Fonts) stands in for Magnolia Script until the font file is supplied.
+- **Fonts (updated 26 Oct 2026):** the brand typeface is **Chillax** (Manushi Parikh / Indian Type Foundry, free via Fontshare) — owner supplied the six static weights (200–700). It is used for everything: display 600, body 400, uppercase labels 500, outlined index 700. Files: `assets/fonts/chillax-*.woff2`, one `@font-face` family "Chillax" declared at the top of `src/template.html`. The deck's Helvetica/Arial are now fallbacks only. The cursive accent ("ghar.") still uses **Pinyon Script** (Google Fonts) as a stand-in for the deck's Magnolia Script until that file is supplied.
 - **Voice:** warm, confident, slightly playful, personal; never corporate, never "hostel"/"PG" as a self-description; light Hinglish — "ghar" (home) is the signature word, always set in the script face.
 
 ## 3. Owner's standing instructions (in the order they were given)
@@ -78,7 +78,7 @@ The owner supplied a detailed record-label landing-page spec; it was applied wit
 
 **Palette mapping:** ground = olive `#7c714e`; secondary ground = brown `#543e2c`; ink = cream `#eadccc`; accent = tan `#9d8164` **only on type, dots and rules, never a filled area**; hairlines = `rgba(234,220,204,.16)`; secondary ink = cream at .74 opacity; muted = cream at .5. WhatsApp green is *not* used in v3 (buttons are cream/olive). No gradients as banners, no glows, no drop shadows except on deck cards.
 
-**Type:** display = Helvetica Neue/Helvetica 700, tracking −.02 to −.03em; small type = Arial 10.5–16px, labels uppercase at .14em; script accent = Pinyon Script for "ghar." and single-phrase accents.
+**Type:** Chillax throughout — display 600 at tracking −.02 to −.03em; small type 400 at 10.5–16px; uppercase labels 500 at .14em; outlined index 700 (Chillax has no 800). Script accent = Pinyon Script for "ghar." and single-phrase accents.
 
 **Six sections:**
 1. **Portal hero** (`.portal` 250vh, sticky `.stage` 100svh, `isolation:isolate`). Layers back→front: full-bleed photo starting at scale 1.18; duotone wash (olive→tan, `mix-blend-mode:overlay`, opacity 0→.38); radial veil; two solid olive panels (52% wide each) meeting in the middle so the hero starts **closed**; two accent dots at centre; wordmark `<h1 class="mark">` split into `<span>Halapeno</span><span>Homes</span>`; corner metadata pinned to the four corners. On scroll (eased progress `e`): panels translate ±115% (clear the frame), image scale 1.18→1, duotone rises, dots travel to opposite corners (±46vw, ±42vh), wordmark **scales up (≤1.34, capped so it fits the viewport) while letter-spacing tightens (−.02→−.06em) and the halves travel outward ~half their width, clamped to page padding**. Everything is bound to scroll position → fully reversible. Measured: 462px panel travel in the first 700px of scroll; panels return to the exact start pixel.
@@ -154,6 +154,6 @@ Changing a bed's status updates the nav pill, hero corner note, availability lab
 5. What's included in rent (housekeeping, Wi-Fi, utilities, laundry, meals?), deposit and notice period — for a future FAQ.
 6. Tower/floor of the unit (or drop "high floor").
 7. Domain registrar/host details for go-live; whether to use Plausible/GA4.
-8. Font files: Magnolia Script, Helvetica World, Arial MT Pro (to replace web stand-ins).
-9. Whether to keep Helvetica/Arial or switch to the spec's Syne/Sora (two CSS variables: `--display`, `--sans`).
+8. Font file for Magnolia Script (Chillax is now in place; Helvetica/Arial no longer needed).
+9. (resolved) Chillax replaces both Helvetica/Arial and the spec's Syne/Sora.
 10. Should Superdesign exploration go ahead (costs credits), and which of the 3 directions if so.

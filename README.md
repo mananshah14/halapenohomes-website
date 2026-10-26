@@ -4,7 +4,7 @@ Static site for Halapeno Homes — curated coliving, Ahmedabad. Served by GitHub
 
 ## Layout
 - `index.html` — the built page (do not hand-edit; regenerate from `src/`)
-- `assets/` — photos
+- `assets/` — photos; `assets/fonts/` — Chillax (brand typeface, WOFF2, see NOTICE.txt)
 - `src/template.html` — the single source (styles, markup, script, `CONFIG`)
 - `src/build.py` — `python3 src/build.py` → writes `index.html` and `src/dist/halapeno-artifact.html`
 - `src/test.py` — `python3 src/test.py` → Playwright checks + screenshots into `src/dist/`
