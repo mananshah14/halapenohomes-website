@@ -14,7 +14,7 @@ Drop this file in as `CLAUDE.md` at the repo root (or `~/.claude/CLAUDE.md`). Ev
 - **Occupancy model:** co-ed (mixed) homes, **4 residents, twin-sharing** (two single beds per bedroom). Each bedroom has its own bathroom.
 - **Pricing:** **never shown on the site.** Enquire on WhatsApp. Copy says pricing is shared once move-in date is known; "no hidden charges".
 - **Enquiry channel:** **WhatsApp only** (pre-filled `wa.me` links). No form backend, no email capture forms.
-- **Society disclosure:** yes — name **Godrej Green Glades, Godrej Garden City** and show its amenities (owner's decision). Always carry the disclaimer: Godrej Green Glades / Godrej Garden City are projects of Godrej Properties; Halapeno Homes is an independent operator and not affiliated with Godrej; amenities subject to society rules and timings.
+- **Society disclosure:** **do NOT name the society or flat on the website** (owner reversed this on 25 Nov 2026 — "remove the flat name"). The site now says "a gated society", "Jagatpur home", "near Nirma University, off S.G. Highway". Amenities may still be listed generically. Keep the line that Halapeno is an independent operator and amenities are subject to the society's rules. The society name (Godrej Green Glades, Godrej Garden City) stays in this file for internal reference and in the Customer Service Agreement, not on the site.
 - **Logo:** not yet supplied ("will add soon"). Site currently uses a text wordmark. **Tagline:** the deck's tagline slide was image-only and could not be extracted — still unknown.
 - **Contact details:** not yet supplied. Placeholders in code: WhatsApp `910000000000`, Instagram `halapenohomes`, email `hello@halapenohomes.com`.
 
