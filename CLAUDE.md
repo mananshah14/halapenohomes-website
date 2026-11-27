@@ -77,12 +77,23 @@ Owner asked to "go to the internet and figure out the best ways to make this the
 Applied, all from the owner's own Customer Service Agreement draft (so FLAG to the owner if the terms change): **"Your stay, your way"** panel (`#way`): share a room or take one; 11-month term, 3-month minimum, 30 days' notice, rent fixed for the term; biometric lock with a personal access code, deactivated on move-out; support 10–7 on working days, emergencies any hour. **Included / paid at actuals** two-column list under the roster (Wi-Fi, housekeeping of common areas, maintenance coordination, lock access, society amenities vs electricity share, LPG, cook/house-help if wanted, society move-in charges, refundable deposit). **Four steps** (`#steps`, "No brokers in between" — says no brokers, does not promise a timeline). **FAQ** (`#faq`, six answers drawn only from the agreement and owner statements; guest hours deliberately unspecified; pets not permitted per Schedule 1). **WhatsApp composer** in the Close (who · when · visit / video walk-through / terms first → pre-filled message). **Mobile sticky CTA bar** (≤640px: Book a visit + The terms; body gets bottom padding). **OG share image** `assets/og-image.jpg` (1200×630, wordmark set in Chillax from the WOFF2 + the night bedroom) + canonical + twitter card — matters for WhatsApp link previews. Nav now: Homes · Terms · Included · FAQ · Contact. Deck images lazy-load.
 Photo edits made in code (OpenCV): AC brand/energy stickers inpainted out of both bedroom shots; gentle warm LAB grade (+4–6 b, 1.04 contrast) on all five deck squares; squares re-cut. Pillow plastic and the mattress label are NOT removable by inpainting — reshoot needed.
 
+## 4e. v6 — Niraj Mehta review applied (27 Nov 2026)
+Owner relayed a review meeting (Niraj Mehta); every point below was approved by the owner and is now live. Do not undo any of it without asking.
+- **Headers brighter, bigger, catchier.** All h2 now set in full cream `#eadccc` (no tan/muted phrases inside headings) and ~20% larger: fold clamp(30px,4.6vw,68px); gallery/FAQ clamp(34px,4.6vw,64px); "Tell us what we missed." and the close clamp(38px,5.4vw,80px).
+- **Fold:** the opening line stays word for word ("A curated living space where strangers become friends and a house becomes home, a space that *finally feels like ghar.*"); the paragraph under it was removed.
+- **Homes:** "Homes with a little personality." replaced by **"After a long day, sometimes all you want is a little privacy, a moment of quiet, and a space that feels like *yours.*"** followed by the bold underlined link **"Come experience it yourself."** → `#book`. The facts strip and the small phone-loop video were dropped from this section; the throwable card deck stays.
+- **Gallery** (`#gallery`, new nav tab): the full-house walk-through video goes here, never as a small screen on the home page. Until the owner's friend delivers the film, `walk.mp4` (the two WhatsApp clips) plays there with controls, labelled "Full house walk-through · coming soon". Layout: portrait video sticky on the left, nine full-frame photos (`assets/g-*.jpg`, AC labels inpainted, warm grade, door-sign cropped, **no square crops**) in a 2-col grid on the right, closing with a "See it for yourself → Book a viewing" tile. JS reads the video's real aspect on `loadedmetadata`; a landscape film automatically switches `.gbody.wide` (video full-width above a 3-col grid). To swap in the final film: replace `assets/walk.mp4` + `walk-poster.jpg`, rebuild.
+- **Removed:** the before/after "shell to home" slider (`#ba`), the "Your stay, your way" terms panel (`#way`), the four-step "from hello to move-in" (`#steps`), and the three-tap WhatsApp composer in the close.
+- **Amenities → "Tell us what we missed."** (`#missed`): h2, then "What's the one thing you wish your last place had?", then "We've thought about what makes everyday life easier in a shared home. Take a look at what's included, then come see it for yourself." Two boxes: **What's included** (`<details id="included">`, click to expand: the eight roster rows + In the rent / Paid at actuals + nothing else) and **Book a viewing** (`#book`, form: name · phone/WhatsApp number · how (In person / On a live video call / Send me the walk-through video) → opens WhatsApp with a pre-filled message; no backend, nothing stored).
+- Nav: Gallery · What's included · FAQ · Contact; nav button and mobile sticky bar: "Book a viewing" (→ `#book`) + "Gallery". FAQ and the close (heading, disclaimer, WhatsApp/Email, footer, bigmark) unchanged.
+- Direction from the meeting to keep applying: the site should feel **personal and lavish**; "the first page carries the whole brand".
+
 ## 5. Evidence rules (things that must NOT be invented)
 
 - No fabricated testimonials, reviews, press, ratings, resident counts or "X happy residents". A brand-voice card ("What we're building") replaced an earlier invented quote. Add real quotes only with the resident's permission.
 - No prices, no "starting from".
 - No other cities, no "coming soon: Mumbai/Pune".
-- Bed availability in `CONFIG` (Bed 1 open, Bed 2 taken, Bed 3 open, Bed 4 taken, from 1 Oct 2026) is **sample data, not confirmed by the owner.** Ask before publishing.
+- Availability was removed from the site (26 Nov 2026). Never show bed status again without the owner supplying real data.
 - Assumptions currently in copy that the owner has not confirmed: "a high floor"; housekeeping, Wi-Fi and utilities included; "first house dinner is on us" (v2 only); deposit = one month, one-month notice (v2 FAQ only); meals add-on (v2 FAQ only). v3 avoids most of these; keep it that way until confirmed.
 
 ## 6. Current design spec — v3 "portal hero" (what is live)
@@ -93,57 +104,49 @@ The owner supplied a detailed record-label landing-page spec; it was applied wit
 
 **Type:** Chillax throughout — display 600 at tracking −.02 to −.03em; small type 400 at 10.5–16px; uppercase labels 500 at .14em; outlined index 700 (Chillax has no 800). Script accent = Pinyon Script for "ghar." and single-phrase accents.
 
-**Six sections:**
-1. **Portal hero** (reinstated 27 Nov 2026 after a one-day step-inside experiment, see §4c) (`.portal` 250vh on desktop, **150svh under 960px**, sticky `.stage` 100svh, `isolation:isolate`). Layers back→front: full-bleed photo starting at scale 1.18; duotone wash (olive→tan, `mix-blend-mode:overlay`, opacity 0→.38); radial veil; two solid olive panels (52% wide each) meeting in the middle so the hero starts **closed**; two accent dots at centre; wordmark `<h1 class="mark">` split into `<span>Halapeno</span><span>Homes</span>`; corner metadata pinned to the four corners. On scroll (eased progress `e`): panels translate ±115% (clear the frame), image scale 1.18→1, duotone rises, dots travel to opposite corners (±46vw, ±42vh), wordmark **scales up (≤1.34, capped so it fits the viewport) while letter-spacing tightens (−.02→−.06em) and the halves travel outward ~half their width, clamped to page padding**. Everything is bound to scroll position → fully reversible. Measured: 462px panel travel in the first 700px of scroll; panels return to the exact start pixel.
-2. **Statement fold** — outlined index "01" (`-webkit-text-stroke`, transparent fill), label, statement at clamp(24px,3.6vw,52px) over ~22ch with one tan phrase and the script "finally feels like ghar.", circular photo (`.orb`, lamp crop) off the right edge at .42 opacity drifting/rotating with scroll.
-3. (Order since v5: hero → fold → homes → before/after → your-stay-your-way → roster+included → steps → FAQ → close.) **Homes** — two columns: headline "Homes with a little *personality.*", lede, "Book a visit" + "See availability", three facts (4 housemates per home · 2+2 bedrooms/bathrooms · 0 curfews); on the right a **throwable card deck** (two-way since 25 Nov 2026: swipe/drag left or → = next, swipe/drag right or ← = previous — the previous card flies back in from the right; the progress dots are clickable to jump) (8 cards: projector lounge, before, shelf, floor-plan type card, lamp, dining, Godrej Green Glades amenities, "Next home, Ahmedabad" waitlist CTA). Pointer capture on `pointerdown`, drag with rotation ∝ dx and slight scale, throw threshold = 10% of deck width, `tabindex=0`, ←/→ keys, `touch-action:pan-y`, progress dots + hint line.
-4. **Roster** ("The Halapeno way") — hairline rows: label · display-face name · right-aligned count (Curfew: none · Housemates: handpicked & verified, 4 per home · Rooms: twin-sharing, bath attached, 2+2 · Living: projector wall, 16'3" · Society: gated Godrej, 24×7 · Included: housekeeping, Wi-Fi, utilities · Pricing: shared on WhatsApp, 0 hidden charges).
-5. ~~Availability table~~ — removed 26 Nov 2026 (see §4b). The page is now five sections.
-6. **Close** — headline "Come see if it *feels like ghar.*", fine print + Godrej disclaimer, "WhatsApp us" + "Email", hairline footer strip (Instagram · Email · List your flat · Map · ©), then the wordmark full width (JS-fitted to the container). It is NOT cropped by the page edge any more — on phones the crop read as a bug ("half cut"), so it sits fully visible with bottom padding.
+**Sections, in order (v6, live):** hero → fold → homes+deck → gallery → tell-us-what-we-missed (included box + viewing form) → FAQ → close.
+1. **Portal hero** (reinstated 27 Nov 2026 after a one-day step-inside experiment, see §4c) (`.portal` 250vh on desktop, **150svh under 960px**, sticky `.stage` 100svh, `isolation:isolate`). Layers back→front: full-bleed photo (the projector living room, `living-after-hero.jpg`) starting at scale 1.18; duotone wash (olive→tan, `mix-blend-mode:overlay`, opacity 0→.38); radial veil; two solid olive panels (52% wide each) meeting in the middle so the hero starts **closed**; two accent dots at centre; wordmark `<h1 class="mark">` split into `<span>Halapeno</span><span>Homes</span>`; corner metadata = "Ahmedabad" top-left and "Scroll to open" bottom-right only. On scroll (eased progress `e`): panels translate ±115%, image scale 1.18→1, duotone rises, dots travel to opposite corners, wordmark scales up (≤1.34) while letter-spacing tightens and the halves travel outward, clamped to page padding. Everything is bound to scroll position → fully reversible.
+2. **Statement fold** — outlined index "01", label "What Halapeno Homes means", the opening line only (see §4e), circular photo (`.orb`, entrance) off the right edge drifting with scroll.
+3. **Homes** — label "Our homes · Ahmedabad", the privacy headline + "Come experience it yourself." link (§4e); on the right the **throwable card deck** (two-way: drag/swipe left or → = next, right or ← = previous; dots clickable; `tabindex=0`; `touch-action:pan-y`). 9 cards: bedroom night · entrance · bedroom day · floor-plan type card "Two rooms. Four people." · dining · wardrobes · living room ("Finishing now — this is the design") · "A gated society" type card · "Next home, Ahmedabad." waitlist CTA.
+4. **Gallery** — see §4e.
+5. **Tell us what we missed** — see §4e. Roster rows inside the box: Curfew "come & go freely" (placeholder wording, owner to confirm) · Housemates handpicked & verified, 4 per flat · Rooms two bedrooms, bath attached, 2+2 · Living a projector wall · Society gated, pool & gym, clubhouse access · Security biometric lock & CCTV, 24×7 · Included housekeeping & Wi-Fi, in the rent · Pricing a predefined contract, 0 surprise increments.
+6. **FAQ** — six `<details>` drawn only from the agreement and owner statements.
+7. **Close** — headline "Come see if it *feels like ghar.*", the independent-operator disclaimer (fixed wording, do not change), "WhatsApp us" + "Email", footer strip (Instagram · Email · List your flat · ©), then the wordmark full width (JS-fitted, never cropped).
 
 **Motion rules:** hero/orb bound to scroll (reversible). Entry reveals (`.rv` → `.in`) fire once via IntersectionObserver and never un-reveal; they only exist under `html.js-motion`, added only when `prefers-reduced-motion` is not set, so reduced-motion and no-JS renders are the finished page (verified: fold h2 opacity 1 under reduced motion). No horizontal overflow on 390px (verified).
 
-**Nav:** fixed 58px, translucent olive with 14px backdrop blur and bottom hairline; wordmark 15px with a tan trailing period; uppercase 10.5px links turning tan on hover; availability pill; one cream pill button; burger + full-screen brown menu under 960px.
+**Nav:** fixed 58px, translucent olive with 14px backdrop blur and bottom hairline; wordmark 15px with a tan trailing period; uppercase 10.5px links (Gallery · What's included · FAQ · Contact) turning tan on hover; one cream pill button "Book a viewing" → `#book`; burger + full-screen brown menu under 960px; ≤640px a fixed bottom bar (Book a viewing · Gallery).
 
 ## 7. Code layout and how to work on it
 
-Workspace in the Cowork session (recreate from the zips if starting fresh):
+Repo: https://github.com/mananshah14/halapenohomes-website (public, branch `main`, GitHub Pages deploy-from-branch at root, `CNAME` = halapenohomes.com, Cloudflare DNS — see `DEPLOY.md`). Live: https://halapenohomes.com. Claude.ai preview artifact (same URL every version): https://claude.ai/code/artifact/902423a8-45d6-406e-a018-418d797637d4
 
 ```
-hh3/                          ← v3, CURRENT
-  template.html               single source: <title>/meta/<style>/markup/<script>, images as {{IMG:name.jpg}}
-  build.py                    → dist/halapeno-artifact.html (images inlined base64, no doctype — for the claude.ai artifact)
-                              → dist/halapeno-homes-site/{index.html, assets/, README.md} (deployable)
-  test.py                     Playwright checks: panel travel >100px/700px, reversibility, deck arrow keys, reduced-motion, mobile overflow, screenshots
-  assets/                     the photos listed in §4
-hh2/                          ← v2 (olive cinematic; superseded but has reusable pieces)
-  template.html, build.py     GSAP 3.12.5 + ScrollTrigger + Lenis 1.1.18 (vendored in assets/ because CDNs are blocked in the sandbox)
-  superdesign/                handoff package for Superdesign (see §8)
-hh/                           ← v1 (generic multi-city; obsolete — do not reuse copy)
+index.html            built output — DO NOT hand-edit; regenerated by src/build.py
+assets/               fonts/ (Chillax 400 + 600 WOFF2), hero + deck squares (sq-*.jpg), gallery full-frames (g-*.jpg),
+                      walk.mp4 + walk-poster.jpg, og-image.jpg, living-after/before.jpg
+src/template.html     THE single source: <title>/meta/<style>/markup/<script>; images as {{IMG:name.jpg}}, video as {{VID:name.mp4}}
+src/build.py          → index.html (relative asset paths) and src/dist/halapeno-artifact.html (everything base64-inlined, no doctype, for the artifact)
+src/test.py           Playwright checks (older; the quick loop below is what was used for v5/v6)
+CNAME, .nojekyll, README.md, DEPLOY.md, CLAUDE.md
 ```
 
-Deliverables sent to the owner: `halapeno-homes-site-v3.zip` (current deploy), `halapeno-homes-site.zip` (v2), `halapeno-superdesign.zip`.
-Live preview (claude.ai artifact, same URL across versions, currently v3): https://claude.ai/code/artifact/902423a8-45d6-406e-a018-418d797637d4
+**Loop for every change:** edit `src/template.html` → `python3 src/build.py` → serve the repo over `python3 -m http.server` and run Playwright (Chromium) at 1440×900 and 390×844: no page errors (file:// font CORS and the blocked Google-Fonts tunnel are sandbox noise), `scrollWidth === clientWidth`, every `a[href^="#"]` resolves, all `.rv` end up `.in`, the viewing form opens `wa.me/<CONFIG.whatsapp>?text=…`, and look at the screenshots → commit → push → republish the artifact from `src/dist/halapeno-artifact.html`. `src/dist/` and `*.png` are git-ignored.
 
-**Everything editable lives in the `CONFIG` object at the bottom of `template.html` / `index.html`:**
+**Everything editable lives in the `CONFIG` object at the bottom of `src/template.html`:**
 ```js
 const CONFIG = {
-  whatsapp: "910000000000",            // country code + number, no "+"
+  whatsapp: "910000000000",   // placeholder — owner has not supplied the number yet
   instagram: "halapenohomes",
   email: "hello@halapenohomes.com",
-  homes: [
-    { code:"HH·01", name:"Godrej Green Glades", area:"Godrej Garden City, Jagatpur", status:"open",
-      beds:[ {room:"Bedroom 1",bed:"Bed 1",status:"open",from:"1 Oct 2026"}, {room:"Bedroom 1",bed:"Bed 2",status:"taken",from:""},
-             {room:"Bedroom 2",bed:"Bed 3",status:"open",from:"1 Oct 2026"}, {room:"Bedroom 2",bed:"Bed 4",status:"taken",from:""} ] },
-    { code:"HH·02", name:"Next home", area:"Ahmedabad", status:"waitlist", beds:[] },
-  ],
+  homes: [ { code:"HH·01", name:"S.G. Highway", area:"Ahmedabad" }, { code:"HH·02", name:"Next home", area:"Ahmedabad" } ],
 };
 ```
-Changing a bed's status updates the nav pill, hero corner note, availability label, table and Enquire links. Deck cards are the `CARDS` array in the deck IIFE (square ~900px crops).
+Deck cards are the `CARDS` array in the deck IIFE (square ~900px crops in `assets/sq-*.jpg`). Gallery photos are plain `<figure>`s in `#gallery`. All WhatsApp links come from `data-wa="message"` attributes wired to `CONFIG.whatsapp`; the viewing form builds its own message.
 
-**Conventions:** single static HTML, no framework, no build tools beyond `build.py`; everything inlined for the artifact build; CDN-free (sandbox egress blocks cdnjs/jsdelivr — vendor any library into `assets/`); all `<a>` need unique ids and full https/#/mailto hrefs if the page is ever re-imported into Superdesign; run `python3 build.py && python3 test.py` after every change and look at the screenshots.
+**Conventions:** single static HTML, no framework, no build tools beyond `build.py`; CDN-free (sandbox egress blocks cdnjs/jsdelivr — vendor anything into `assets/`); Chillax 400/600 only + Pinyon Script (Google Fonts) for script accents; four brand colours only; never name the society or the flat; no prices; never say there is only one home.
 
-**Deploy plan (not done yet):** owner will grant access to the Halapeno Homes domain. Static hosting (Netlify / Vercel / Cloudflare Pages or cPanel `public_html`). Add Plausible/GA4, a Google Business Profile for "PG near Nirma University" searches, and an Instagram embed later if wanted.
+**Pushing from a Claude session:** the owner supplies a GitHub token in chat; use it only as an `http.extraheader` on the push command (never write it to git config), and remind the owner to revoke it afterwards. The GitHub REST API is blocked through the sandbox proxy; `git push` to github.com works.
 
 ## 8. Superdesign status
 
@@ -156,17 +159,17 @@ Changing a bed's status updates the nav pill, hero corner note, availability lab
 
 - **v1** — generic coliving site, 3 cities, 6 fake homes, brown-led. Owner corrected: Ahmedabad only, olive, one house, ask questions first. Obsolete.
 - **v2** — olive-led cinematic single page: GSAP hero reveal, parallax, word-by-word manifesto, before/after slider, interactive SVG floor plan with per-bed status, pinned horizontal "Life at Halapeno" gallery, Godrej amenities grid, sticky value cards, comparison table, 4-step process, FAQ, three-tap WhatsApp composer, floating WhatsApp button. Used extra olive tints and WhatsApp green. Owner then said: deck colours only, and the site must not read as single-house. Reusable pieces if wanted later: floor-plan SVG (drawn from the architect's layout), FAQ copy, WhatsApp composer.
-- **v3 (current)** — the portal-hero spec in the four deck colours, six sections, copy rewritten to plural "homes" with a waitlist second entry. Verified with Playwright (§6).
+- **v3** — the portal-hero spec in the four deck colours, six sections, copy rewritten to plural "homes" with a waitlist second entry. Deployed to halapenohomes.com.
+- **v4** — Chillax self-hosted (400/600 only), society/flat names removed, no "twin-sharing", footer wordmark uncropped, mobile hero 150svh, two-way deck, the 14-point meeting list (§4b), real photos in the deck, one-day "step inside" photo hero (rejected, reverted).
+- **v5** — research-led additions (§4d): terms panel, included/at-actuals, steps, FAQ, composer, sticky mobile bar, OG image.
+- **v6 (current)** — Niraj Mehta review (§4e): bigger cream headings, privacy headline, Gallery tab with the walk-through video and full-frame photos, "Tell us what we missed." with the What's-included box and the Book-a-viewing form; before/after, terms panel, steps and composer removed.
 
 ## 10. Open items — ask the owner, don't assume
 
-1. WhatsApp business number, Instagram handle, email.
-2. Logo file (SVG/PNG) and the tagline from the deck.
-3. Real bed availability and move-in date; whether to show availability at all.
-4. Photos: both bedrooms, kitchen, bathrooms, society (pool/gym/clubhouse). Square crops for the deck.
-5. What's included in rent (housekeeping, Wi-Fi, utilities, laundry, meals?), deposit and notice period — for a future FAQ.
-6. Tower/floor of the unit (or drop "high floor").
-7. Domain registrar/host details for go-live; whether to use Plausible/GA4.
-8. Font file for Magnolia Script (Chillax is now in place; Helvetica/Arial no longer needed).
-9. (resolved) Chillax replaces both Helvetica/Arial and the spec's Syne/Sora.
-10. Should Superdesign exploration go ahead (costs credits), and which of the 3 directions if so.
+1. WhatsApp business number (CONFIG still `910000000000` — the viewing form and every button point at it), Instagram handle, email.
+2. The full-house walk-through film (being recorded by the owner's friend) → `assets/walk.mp4` + poster; the gallery label "coming soon" then goes.
+3. Logo in the header (`halapeno-homes-logo-transparent.png` exists; the site still uses the text wordmark).
+4. Clean reshoot of the flat (pillow plastic, mattress label, kitchen and bathroom are unusable as shot); the living room once the projector wall is finished.
+5. Wording of the Curfew row ("come & go freely" is a placeholder) and confirmation that the included / at-actuals and FAQ terms still match the agreement.
+6. What "List your flat" in the footer should do.
+7. Whether Superdesign exploration should go ahead (costs credits).

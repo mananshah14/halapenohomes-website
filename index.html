@@ -48,7 +48,7 @@
   button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   ::selection{background:var(--cream);color:var(--brown)}
   .wrap{width:min(1280px,calc(100vw - 2*clamp(20px,4vw,56px)));margin:0 auto}
-  h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.025em;line-height:1;color:var(--ink)}
+  h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.025em;line-height:1;color:var(--cream)}
   .lbl{font-family:var(--sans);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:var(--ink-2)}
   .lbl.acc{color:var(--ink-2)}
   .lbl.acc::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--acc);margin-right:10px;vertical-align:1px}
@@ -93,9 +93,9 @@
   .fold{min-height:100vh;background:var(--ground-2);position:relative;overflow:hidden;display:flex;align-items:center}
   .fold .wrap{position:relative;z-index:2;padding:120px 0}
   .fold .idx{position:absolute;right:0;top:80px;font-family:var(--display);font-weight:600;font-size:clamp(120px,22vw,320px);line-height:1;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1px var(--hair-2);z-index:1;pointer-events:none;user-select:none}
-  .fold h2{font-size:clamp(24px,3.6vw,52px);max-width:22ch;font-weight:600;letter-spacing:-.02em;line-height:1.15;margin-top:26px}
+  .fold h2{font-size:clamp(30px,4.6vw,68px);max-width:20ch;font-weight:600;letter-spacing:-.025em;line-height:1.08;margin-top:26px}
   .fold h2 .script{font-size:1.45em;color:var(--acc-2);white-space:nowrap}
-  .fold h2 .acc{color:var(--acc)}
+  .fold h2 .acc{color:var(--cream)}
   .fold .sub{margin-top:34px;max-width:52ch;color:var(--ink-2);font-size:14px;line-height:1.7}
   .orb{position:absolute;right:-9vw;top:50%;width:clamp(260px,34vw,520px);aspect-ratio:1;border-radius:50%;overflow:hidden;opacity:.42;z-index:0;will-change:transform;transform:translateY(-50%)}
   .orb img{width:100%;height:100%;object-fit:cover}
@@ -103,13 +103,12 @@
   /* ===== HOMES + DECK ===== */
   .homes{background:var(--ground);padding:clamp(90px,11vw,150px) 0;overflow-x:clip}
   .homes .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,100px);align-items:center}
-  .homes h2{font-size:clamp(34px,4.6vw,66px)}
+  .homes h2{font-size:clamp(32px,4.2vw,60px);line-height:1.08;letter-spacing:-.02em;max-width:18ch}
+  .homes .cta{display:inline-block;margin-top:28px;font-family:var(--display);font-weight:600;font-size:clamp(20px,2vw,26px);color:var(--cream);border-bottom:2px solid var(--acc);padding-bottom:4px;transition:border-color .25s}
+  .homes .cta:hover{border-color:var(--cream)}
   .homes h2 .script{font-size:1.2em;color:var(--acc-2)}
   .homes .lede{margin-top:26px;color:var(--ink-2);max-width:46ch;font-size:15px;line-height:1.7}
   .homes .acts{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
-  .facts{display:flex;gap:34px;margin-top:44px;padding-top:22px;border-top:1px solid var(--hair)}
-  .facts b{display:block;font-family:var(--display);font-weight:600;font-size:26px;letter-spacing:-.03em;color:var(--ink)}
-  .facts span{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);font-weight:600}
   .deckwrap{display:flex;flex-direction:column;align-items:center;gap:18px}
   .deck{position:relative;width:min(calc(100% - 56px),520px);aspect-ratio:1;outline:0;touch-action:pan-y;user-select:none;-webkit-user-select:none}
   .deck:focus-visible::after{content:"";position:absolute;inset:-8px;border:1px solid var(--acc);border-radius:22px;pointer-events:none}
@@ -135,41 +134,31 @@
   .dots i.on{background:var(--acc);transform:scale(1.4)}
 
   /* ===== WALK-THROUGH LOOP (phone frame) ===== */
-  .walk{display:flex;align-items:center;gap:22px;margin-top:40px}
   .phone{width:132px;aspect-ratio:9/16;border-radius:22px;border:1.5px solid var(--hair-2);padding:6px;background:var(--ground-2);flex-shrink:0}
   .phone video{width:100%;height:100%;object-fit:cover;border-radius:16px;display:block;background:#000}
-  .walk p{font-size:12px;letter-spacing:.02em;color:var(--ink-2);max-width:22ch;line-height:1.6}
-  .walk p b{display:block;font-family:var(--display);font-weight:600;font-size:14px;color:var(--ink);letter-spacing:0;margin-bottom:4px}
 
-  /* ===== BEFORE / AFTER ===== */
-  .ba{background:var(--ground-2);padding:clamp(90px,11vw,150px) 0}
-  .ba .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,6vw,100px);align-items:center}
-  .ba h2{font-size:clamp(34px,4.6vw,66px)}
-  .ba h2 .script{font-size:1.2em;color:var(--acc-2)}
-  .ba .lede{margin-top:26px;color:var(--ink-2);max-width:46ch;font-size:15px;line-height:1.7}
-  .compare{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:3/4;max-height:78vh;user-select:none;-webkit-user-select:none;touch-action:pan-y;background:var(--ground)}
-  .compare img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
-  .compare .after{clip-path:inset(0 0 0 var(--pos,50%))}
-  .compare .handle{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:1px;background:var(--ink);transform:translateX(-.5px);z-index:2}
-  .compare .knob{position:absolute;top:50%;left:var(--pos,50%);transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:var(--cream);color:var(--brown);display:grid;place-items:center;z-index:3;cursor:ew-resize;font-family:var(--display);font-weight:600;font-size:14px}
-  .compare .lbl2{position:absolute;top:16px;padding:7px 12px;border-radius:999px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;z-index:2;font-family:var(--sans)}
-  .compare .lbl2.b{left:16px;background:rgba(84,62,44,.6);color:var(--ink)}
-  .compare .lbl2.a{right:16px;background:rgba(234,220,204,.9);color:var(--brown)}
-  .ba .note{margin-top:14px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
-
-  /* ===== YOUR STAY, YOUR WAY ===== */
-  .way{background:var(--ground);padding:clamp(80px,10vw,130px) 0}
-  .way .head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:38px;flex-wrap:wrap}
-  .way h2{font-size:clamp(30px,4vw,56px)}
-  .way h2 .script{font-size:1.2em;color:var(--acc-2)}
-  .choices{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
-  .choice{padding:30px 26px 32px;border-right:1px solid var(--hair)}
-  .choice:last-child{border-right:0}
-  .choice .k{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);display:block;margin-bottom:16px}
-  .choice .k::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--acc);margin-right:10px;vertical-align:1px}
-  .choice b{display:block;font-family:var(--display);font-weight:600;font-size:clamp(20px,1.9vw,26px);letter-spacing:-.02em;line-height:1.1;color:var(--ink)}
-  .choice b .script{font-size:1.15em;color:var(--acc-2)}
-  .choice p{margin-top:12px;font-size:13px;color:var(--ink-2);line-height:1.6}
+  /* ===== GALLERY ===== */
+  .gallery{background:var(--ground-2);padding:clamp(80px,10vw,130px) 0}
+  .gallery .head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:34px;flex-wrap:wrap}
+  .gallery h2{font-size:clamp(34px,4.6vw,64px)}
+  .gallery h2 .script{font-size:1.2em;color:var(--acc-2)}
+  .gbody{display:grid;grid-template-columns:minmax(0,.42fr) minmax(0,1fr);gap:18px;align-items:start}
+  .gbody.wide{grid-template-columns:1fr}
+  .gvideo{position:sticky;top:84px}
+  .gbody.wide .gvideo{position:static;margin-bottom:4px}
+  .gvideo video{display:block;width:100%;height:auto;max-height:calc(100vh - 110px);aspect-ratio:9/16;object-fit:cover;border-radius:18px;background:var(--ground)}
+  .gbody.wide .gvideo video{aspect-ratio:16/9;max-height:80vh;object-fit:contain;background:var(--ground)}
+  .ggrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .gbody.wide .ggrid{grid-template-columns:repeat(3,1fr)}
+  .ggrid figure{margin:0;border-radius:16px;overflow:hidden;background:var(--ground);position:relative}
+  .ggrid img{width:100%;height:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.22,1,.36,1)}
+  .ggrid figure:hover img{transform:scale(1.03)}
+  .ggrid .more{display:flex;flex-direction:column;justify-content:space-between;aspect-ratio:3/4;padding:22px;border-radius:16px;border:1px solid var(--hair-2);background:rgba(124,113,78,.35);transition:background .3s}
+  .ggrid .more:hover{background:rgba(124,113,78,.6)}
+  .ggrid .more b{font-family:var(--display);font-weight:600;font-size:clamp(26px,2.6vw,40px);line-height:1.05;letter-spacing:-.02em;color:var(--cream)}
+  .ggrid .more b .script{font-size:1.2em;color:var(--acc-2)}
+  .ggrid .more .go{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);font-weight:600}
+  .ggrid figcaption{position:absolute;left:14px;bottom:12px;padding:7px 12px;border-radius:999px;background:rgba(84,62,44,.7);color:var(--ink);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;backdrop-filter:blur(6px)}
 
   /* ===== INCLUDED / AT ACTUALS ===== */
   .incl{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,60px);margin-top:54px;padding-top:40px;border-top:1px solid var(--hair)}
@@ -181,19 +170,10 @@
   .incl li.no::before{background:transparent;border:1px solid var(--acc)}
   .incl li span{color:var(--ink-2);font-size:12.5px}
 
-  /* ===== STEPS ===== */
-  .steps{background:var(--ground);padding:clamp(80px,10vw,130px) 0}
-  .steps h2{font-size:clamp(30px,4vw,56px)}
-  .steps .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:48px}
-  .step{padding-top:22px;border-top:1px solid var(--hair-2)}
-  .step i{display:block;font-family:var(--display);font-style:normal;font-weight:600;font-size:34px;color:var(--acc);letter-spacing:-.03em;margin-bottom:12px}
-  .step b{display:block;font-family:var(--display);font-weight:600;font-size:18px;color:var(--ink);letter-spacing:-.01em;margin-bottom:8px}
-  .step p{font-size:13.5px;color:var(--ink-2);line-height:1.65}
-
   /* ===== FAQ ===== */
   .faq{background:var(--ground-2);padding:clamp(80px,10vw,130px) 0}
   .faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,5vw,80px);align-items:start}
-  .faq h2{font-size:clamp(30px,4vw,56px)}
+  .faq h2{font-size:clamp(34px,4.6vw,64px)}
   .faq details{border-top:1px solid var(--hair)}
   .faq details:last-child{border-bottom:1px solid var(--hair)}
   .faq summary{list-style:none;cursor:pointer;padding:20px 0;font-family:var(--display);font-weight:600;font-size:17px;color:var(--ink);display:flex;justify-content:space-between;gap:16px;align-items:center}
@@ -203,19 +183,38 @@
   .faq details p{padding:0 0 22px;font-size:14px;color:var(--ink-2);line-height:1.7;max-width:60ch}
 
   /* ===== COMPOSER (WhatsApp, three taps) ===== */
-  .composer{margin-top:34px;padding:26px 0 0;border-top:1px solid var(--hair);max-width:720px}
-  .composer .q{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin:18px 0 10px}
-  .composer .q:first-child{margin-top:0}
-  .chips{display:flex;flex-wrap:wrap;gap:8px}
-  .chip{padding:10px 16px;border-radius:999px;border:1px solid var(--hair-2);background:transparent;color:var(--ink);font-size:12px;letter-spacing:.04em;cursor:pointer;transition:.2s}
-  .chip.on,.chip:hover{background:var(--cream);color:var(--brown);border-color:var(--cream)}
-  .composer .pv{margin-top:18px;font-size:13px;color:var(--ink-2);line-height:1.6;border-left:1px solid var(--acc);padding-left:14px;max-width:56ch}
-  .composer .acts{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
 
   /* ===== MOBILE STICKY CTA ===== */
   .sticky{display:none}
 
-  /* ===== ROSTER ===== */
+  /* ===== TELL US WHAT WE MISSED ===== */
+  .missed{background:var(--ground);padding:clamp(80px,10vw,130px) 0}
+  .missed h2{font-size:clamp(38px,5.4vw,80px)}
+  .missed h2 .script{font-size:1.2em;color:var(--acc-2)}
+  .missed .big{margin-top:26px;font-family:var(--display);font-weight:600;font-size:clamp(20px,2.4vw,30px);letter-spacing:-.02em;color:var(--cream);max-width:26ch;line-height:1.2}
+  .missed .lede{margin-top:14px;color:var(--ink-2);max-width:52ch;font-size:17px;line-height:1.7}
+  .twin{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;margin-top:44px;align-items:start}
+  .twin>*{scroll-margin-top:96px}
+  .box{border:1px solid var(--hair-2);border-radius:18px;background:rgba(84,62,44,.25)}
+  .box summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:24px 26px;font-family:var(--display);font-weight:600;font-size:clamp(20px,2vw,26px);color:var(--cream)}
+  .box summary::-webkit-details-marker{display:none}
+  .box summary i{font-style:normal;font-weight:400;color:var(--acc);font-size:28px;transition:transform .25s}
+  .box[open] summary i{transform:rotate(45deg)}
+  .box-in{padding:0 26px 26px}
+  .box-in .row{grid-template-columns:110px 1fr auto;padding:16px 0}
+  .box-in .row .name{font-size:clamp(16px,1.6vw,20px)}
+  .box-in .incl{margin-top:30px;padding-top:26px}
+  .box.form{padding:24px 26px 26px}
+  .box-h{font-family:var(--display);font-weight:600;font-size:clamp(20px,2vw,26px);color:var(--cream);margin-bottom:18px}
+  .form label{display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin-bottom:14px}
+  .form input,.form select{display:block;width:100%;margin-top:8px;padding:13px 14px;border-radius:12px;border:1px solid var(--hair-2);background:rgba(234,220,204,.06);color:var(--ink);font:400 15px/1.3 var(--sans);letter-spacing:0;text-transform:none;outline:0}
+  .form input::placeholder{color:rgba(234,220,204,.4)}
+  .form input:focus,.form select:focus{border-color:var(--acc)}
+  .form select option{color:var(--brown)}
+  .form button{width:100%;justify-content:center;margin-top:6px;height:46px}
+  .form .fine{margin-top:12px;font-size:12px;color:var(--ink-2);line-height:1.6}
+
+  /* ===== ROSTER (used inside the What's-included box) ===== */
   .roster{background:var(--ground-2);padding:clamp(80px,10vw,130px) 0}
   .roster .head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:38px;flex-wrap:wrap}
   .roster h2{font-size:clamp(30px,4vw,56px)}
@@ -229,7 +228,7 @@
   /* ===== CLOSE ===== */
   .close{background:var(--ground-2);padding:clamp(80px,10vw,120px) 0 0;overflow:hidden}
   .close .top{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
-  .close h2{font-size:clamp(34px,5vw,72px)}
+  .close h2{font-size:clamp(38px,5.4vw,80px)}
   .close h2 .script{font-size:1.25em;color:var(--acc-2)}
   .close .fine{margin-top:16px;color:var(--ink-2);font-size:12px;letter-spacing:.02em;max-width:60ch;line-height:1.7}
   .close .acts{display:flex;gap:12px;flex-wrap:wrap}
@@ -254,26 +253,26 @@
     .portal{height:150svh}
     .links{display:none}
     .burger{display:flex}
-    .homes .wrap,.ba .wrap,.faq .wrap{grid-template-columns:1fr}
-    .choices,.steps .grid{grid-template-columns:1fr 1fr}
-    .choice:nth-child(2){border-right:0}
-    .choice:nth-child(-n+2){border-bottom:1px solid var(--hair)}
-    .compare{max-height:none}
+    .homes .wrap,.faq .wrap,.twin{grid-template-columns:1fr}
+    .gbody,.gbody.wide{grid-template-columns:1fr}
+    .gvideo{position:static}
+    .gvideo video{max-height:none;width:auto;max-width:100%;margin:0 auto}
+    .ggrid,.gbody.wide .ggrid{grid-template-columns:1fr 1fr}
     .row{grid-template-columns:110px 1fr auto;gap:16px}
     .fold .idx{top:40px;font-size:38vw}
     .orb{right:-30vw;width:70vw;opacity:.32}
   }
   @media (max-width:640px){
-    .choices,.steps .grid,.incl{grid-template-columns:1fr}
-    .choice{border-right:0;border-bottom:1px solid var(--hair);padding:22px 0}
-    .choice:last-child{border-bottom:0}
+    .incl{grid-template-columns:1fr}
+    .ggrid,.gbody.wide .ggrid{grid-template-columns:1fr 1fr;gap:10px}
+    .box-in .row{grid-template-columns:1fr auto}
+    .box-in .row .lbl{grid-column:1/-1}
     .sticky{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:48;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(84,62,44,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--hair)}
     .sticky .btn{flex:1;justify-content:center;height:44px}
     body{padding-bottom:70px}
     .meta.tr,.meta.br{display:none}
     .row{grid-template-columns:1fr auto;padding:18px 0}
     .row .lbl{grid-column:1/-1}
-    .facts{gap:20px;flex-wrap:wrap}
     .mark{font-size:11.2vw}
   }
 </style>
@@ -284,14 +283,14 @@
   <div class="wrap">
     <a href="#top" class="wordmark" id="wm">Halapeno Homes<i>.</i></a>
     <div class="links">
-      <a href="#homes">Homes</a><a href="#way">Terms</a><a href="#roster">Included</a><a href="#faq">FAQ</a><a href="#close">Contact</a>
+      <a href="#gallery">Gallery</a><a href="#missed">What's included</a><a href="#faq">FAQ</a><a href="#close">Contact</a>
     </div>
-    <a class="btn solid" id="navBook" target="_blank" rel="noopener" data-wa="Hi Halapeno Homes! I'd like to book a visit.">Book a visit</a>
+    <a class="btn solid" id="navBook" href="#book">Book a viewing</a>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="menu" id="menu">
-  <a href="#homes">Homes</a><a href="#way">Terms</a><a href="#roster">Included</a><a href="#faq">FAQ</a><a href="#close">Contact</a>
+  <a href="#gallery">Gallery</a><a href="#missed">What's included</a><a href="#faq">FAQ</a><a href="#close">Contact</a>
 </div>
 
 <main id="top">
@@ -317,7 +316,6 @@
   <div class="wrap">
     <span class="lbl acc rv">What Halapeno Homes means</span>
     <h2 class="rv d1">A curated living space where strangers become friends and a house becomes home, <span class="acc">a space that</span> <span class="script">finally feels like ghar.</span></h2>
-    <p class="sub rv d2">Home isn't a place, it's a feeling. We build it, house after house, for people building a life in a new city: handpicked homes inside gated societies, where safety has no curfew and premium has no compromise.</p>
   </div>
 </section>
 
@@ -326,20 +324,8 @@
   <div class="wrap">
     <div>
       <span class="lbl acc rv">Our homes · Ahmedabad</span>
-      <h2 class="rv d1" style="margin-top:22px">Homes with a little <span class="script">personality.</span></h2>
-      <p class="lede rv d2">Every Halapeno home is a full flat in a gated society, taken from a bare shell to a home with ambient lighting, curated furniture and room for four people who'll actually know each other's names. It's a place to unwind, socialise and build your network in a new city, and every home has a personality of its own. Throw the cards to walk through the rooms.</p>
-      <div class="acts rv d3">
-        <a class="btn solid" target="_blank" rel="noopener" data-wa="Hi Halapeno Homes! I'd like to visit the S.G. Highway home.">Book a visit</a>
-        <a class="btn" href="#roster">What's included</a>
-      </div>
-      <div class="facts rv d3">
-        <div><b>4</b><span>housemates per flat</span></div>
-        <div><b>2 + 2</b><span>bedrooms · bathrooms</span></div>
-      </div>
-      <div class="walk rv d3">
-        <div class="phone"><video src="assets/walk.mp4" poster="assets/walk-poster.jpg" muted autoplay loop playsinline preload="metadata" aria-label="A twelve-second walk through the bedrooms"></video></div>
-        <p><b>A 12-second walk-through</b>Shot on a phone, no filters. The rooms as they are.</p>
-      </div>
+      <h2 class="rv d1" style="margin-top:22px">After a long day, sometimes all you want is a little privacy, a moment of quiet, and a space that feels like <span class="script">yours.</span></h2>
+      <a class="cta rv d2" href="#book">Come experience it yourself.</a>
     </div>
     <div class="deckwrap rv d1">
       <div class="deck" id="deck" tabindex="0" role="region" aria-label="Home gallery. Use left and right arrow keys or drag to flip through." aria-roledescription="card deck"></div>
@@ -349,59 +335,52 @@
   </div>
 </section>
 
-<!-- ===== BEFORE / AFTER ===== -->
-<section class="ba" id="ba">
+<!-- ===== GALLERY ===== -->
+<section class="gallery" id="gallery">
   <div class="wrap">
-    <div>
-      <span class="lbl acc rv">Before → after</span>
-      <h2 class="rv d1" style="margin-top:22px">From a shell to <span class="script">a home.</span></h2>
-      <p class="lede rv d2">Drag the handle. Every Halapeno home starts as a bare flat and ends as somewhere you'd invite your parents to. This is the living room: the shell we took over, and the design we're finishing now.</p>
+    <div class="head">
+      <div><span class="lbl acc rv">Gallery</span><h2 class="rv d1" style="margin-top:20px">Have a <span class="script">look around.</span></h2></div>
+      <span class="lbl rv d2" id="galNote">Full house walk-through · coming soon</span>
     </div>
-    <div>
-      <div class="compare rv d1" id="compare" style="--pos:50%">
-        <img src="assets/living-before.jpg" alt="The bare living room before Halapeno furnished it" class="before">
-        <img src="assets/living-after.jpg" alt="The living room design: ambient lighting, sofa, bean bag and shelving" class="after">
-        <span class="lbl2 b">Before</span><span class="lbl2 a">After</span>
-        <div class="handle"></div><div class="knob" aria-label="Drag to compare">⟷</div>
-      </div>
-      <div class="note rv d2">Living room · finishing now</div>
+    <div class="gbody">
+    <div class="gvideo rv d1"><video id="galVid" src="assets/walk.mp4" poster="assets/walk-poster.jpg" controls muted playsinline preload="metadata" aria-label="A walk through the home"></video></div>
+    <div class="ggrid">
+      <figure class="rv"><img src="assets/g-bed-night.jpg" alt="Bedroom at night with the cove lighting on" loading="lazy" decoding="async"><figcaption>The bedroom, lights on</figcaption></figure>
+      <figure class="rv d1"><img src="assets/g-entrance-night.jpg" alt="The entrance at night, backlit mirror glowing" loading="lazy" decoding="async"><figcaption>The entrance</figcaption></figure>
+      <figure class="rv d2"><img src="assets/g-dining.jpg" alt="Dining table for four with cane chairs" loading="lazy" decoding="async"><figcaption>Dining for four</figcaption></figure>
+      <figure class="rv"><img src="assets/g-bed-window.jpg" alt="Bedroom by day with the city in the window" loading="lazy" decoding="async"><figcaption>The bedroom, by day</figcaption></figure>
+      <figure class="rv d1"><img src="assets/g-wardrobe.jpg" alt="Wardrobe doors and floating shelves" loading="lazy" decoding="async"><figcaption>Wardrobes &amp; shelves</figcaption></figure>
+      <figure class="rv d2"><img src="assets/g-door.jpg" alt="The front door open onto the lit entrance" loading="lazy" decoding="async"><figcaption>The door</figcaption></figure>
+      <figure class="rv"><img src="assets/g-bed-day.jpg" alt="Bedroom with curtains drawn" loading="lazy" decoding="async"><figcaption>Curtains drawn</figcaption></figure>
+      <figure class="rv d1"><img src="assets/g-entrance.jpg" alt="The entrance by day" loading="lazy" decoding="async"><figcaption>Shoes off, you're in</figcaption></figure>
+      <figure class="rv d2"><img src="assets/g-wardrobe-2.jpg" alt="Wardrobe wall with shelves" loading="lazy" decoding="async"><figcaption>Your side of the wardrobe</figcaption></figure>
+      <a class="more rv" href="#book"><span class="lbl">The rest</span><b>See it for <span class="script">yourself.</span></b><span class="go">Book a viewing →</span></a>
+    </div>
     </div>
   </div>
 </section>
 
-<!-- ===== YOUR STAY, YOUR WAY ===== -->
-<section class="way" id="way">
+<!-- ===== TELL US WHAT WE MISSED ===== -->
+<section class="missed" id="missed">
   <div class="wrap">
-    <div class="head">
-      <div><span class="lbl acc rv">Your stay, your way</span><h2 class="rv d1" style="margin-top:20px">The terms, in <span class="script">plain words.</span></h2></div>
-      <span class="lbl rv d2">Written into your agreement</span>
-    </div>
-    <div class="choices">
-      <div class="choice rv"><span class="k">Room</span><b>Share a room, or take one for <span class="script">yourself.</span></b><p>Two options, one home. Either way you get your own bed, wardrobe and shelf, and the whole flat is yours to use.</p></div>
-      <div class="choice rv d1"><span class="k">Term</span><b>Eleven months, renewable.</b><p>A three-month minimum stay, then thirty days' notice from either side. Rent is fixed for the term — no mid-way increments.</p></div>
-      <div class="choice rv d2"><span class="k">Access</span><b>A code, not a key.</b><p>Biometric lock with your own access code, deactivated the day you leave. Come and go on your own clock.</p></div>
-      <div class="choice rv d3"><span class="k">Support</span><b>A person, not a ticket.</b><p>Support on working days, 10 am to 7 pm. Water, power or safety emergencies answered at any hour.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== ROSTER ===== -->
-<section class="roster" id="roster">
-  <div class="wrap">
-    <div class="head">
-      <div><span class="lbl acc rv">The Halapeno way</span><h2 class="rv d1" style="margin-top:20px">What every flat comes with.</h2></div>
-      <span class="lbl rv d2">Same rules, every flat</span>
-    </div>
-    <div class="row rv"><span class="lbl acc">Curfew</span><span class="name">None. You're an adult.</span><span class="cnt">come &amp; go freely</span></div>
-    <div class="row rv"><span class="lbl acc">Housemates</span><span class="name">Handpicked &amp; verified</span><span class="cnt"><b>4</b> per flat</span></div>
-    <div class="row rv"><span class="lbl acc">Rooms</span><span class="name">Two bedrooms, bath attached</span><span class="cnt"><b>2</b> + <b>2</b></span></div>
-    <div class="row rv"><span class="lbl acc">Living</span><span class="name">A projector wall</span><span class="cnt">wall-sized</span></div>
-    <div class="row rv"><span class="lbl acc">Society</span><span class="name">Gated society, pool &amp; gym</span><span class="cnt">clubhouse access</span></div>
-    <div class="row rv"><span class="lbl acc">Security</span><span class="name">Biometric lock &amp; CCTV</span><span class="cnt"><b>24</b>×7</span></div>
-    <div class="row rv"><span class="lbl acc">Included</span><span class="name">Housekeeping &amp; Wi-Fi</span><span class="cnt">in the rent</span></div>
-    <div class="row rv"><span class="lbl acc">Pricing</span><span class="name">A predefined contract, <span class="script">no surprises.</span></span><span class="cnt"><b>0</b> surprise increments</span></div>
+    <span class="lbl acc rv">What's included</span>
+    <h2 class="rv d1" style="margin-top:20px">Tell us what <span class="script">we missed.</span></h2>
+    <p class="big rv d2">What's the one thing you wish your last place had?</p>
+    <p class="lede rv d2">We've thought about what makes everyday life easier in a shared home. Take a look at what's included, then come see it for yourself.</p>
+    <div class="twin">
+      <details class="box rv d3" id="included">
+        <summary><span>What's included</span><i>+</i></summary>
+        <div class="box-in">
+    <div class="row"><span class="lbl acc">Curfew</span><span class="name">None. You're an adult.</span><span class="cnt">come &amp; go freely</span></div>
+    <div class="row"><span class="lbl acc">Housemates</span><span class="name">Handpicked &amp; verified</span><span class="cnt"><b>4</b> per flat</span></div>
+    <div class="row"><span class="lbl acc">Rooms</span><span class="name">Two bedrooms, bath attached</span><span class="cnt"><b>2</b> + <b>2</b></span></div>
+    <div class="row"><span class="lbl acc">Living</span><span class="name">A projector wall</span><span class="cnt">wall-sized</span></div>
+    <div class="row"><span class="lbl acc">Society</span><span class="name">Gated society, pool &amp; gym</span><span class="cnt">clubhouse access</span></div>
+    <div class="row"><span class="lbl acc">Security</span><span class="name">Biometric lock &amp; CCTV</span><span class="cnt"><b>24</b>×7</span></div>
+    <div class="row"><span class="lbl acc">Included</span><span class="name">Housekeeping &amp; Wi-Fi</span><span class="cnt">in the rent</span></div>
+    <div class="row"><span class="lbl acc">Pricing</span><span class="name">A predefined contract, <span class="script">no surprises.</span></span><span class="cnt"><b>0</b> surprise increments</span></div>
     <div class="incl">
-      <div class="rv"><h3>In the rent<small>What the monthly charge covers</small></h3><ul>
+      <div><h3>In the rent<small>What the monthly charge covers</small></h3><ul>
         <li>A furnished bed or room, with wardrobe and shelf space</li>
         <li>High-speed Wi-Fi</li>
         <li>Housekeeping of the common areas</li>
@@ -409,26 +388,26 @@
         <li>Biometric-lock access and support</li>
         <li>Society amenities <span>— pool, gym, courts, per society rules</span></li>
       </ul></div>
-      <div class="rv d1"><h3>Paid at actuals<small>Not in the rent — we tell you before you sign</small></h3><ul>
+      <div><h3>Paid at actuals<small>Not in the rent — we tell you before you sign</small></h3><ul>
         <li class="no">Your share of the electricity bill</li>
         <li class="no">LPG, and a cook or house-help if you want one</li>
         <li class="no">Society move-in charges, where the society asks</li>
         <li class="no">A refundable security deposit, returned after move-out inspection</li>
       </ul></div>
     </div>
-  </div>
-</section>
-
-<!-- ===== STEPS ===== -->
-<section class="steps" id="steps">
-  <div class="wrap">
-    <span class="lbl acc rv">From hello to move-in</span>
-    <h2 class="rv d1" style="margin-top:20px">Four steps. No brokers in between.</h2>
-    <div class="grid">
-      <div class="step rv"><i>01</i><b>Say hi on WhatsApp</b><p>Tell us when you're moving and what you do. A person replies, not a bot.</p></div>
-      <div class="step rv d1"><i>02</i><b>A short call, and ID</b><p>Fifteen minutes to see if the home and the housemates are a fit. Everyone who lives here went through the same.</p></div>
-      <div class="step rv d2"><i>03</i><b>Visit, or a live video walk-through</b><p>Walk the flat, meet whoever's home, ask anything. Can't make it in person? We'll walk you through on a video call.</p></div>
-      <div class="step rv d3"><i>04</i><b>Sign, get your code, move in</b><p>One agreement with everything in writing. Move-in photos are shared with you on day one, and your access code goes live.</p></div>
+        </div>
+      </details>
+      <div class="box form rv d3" id="book">
+        <div class="box-h">Book a viewing</div>
+        <form id="viewForm" autocomplete="on">
+          <label>Your name<input name="name" required placeholder="So we know who we're talking to"></label>
+          <label>Phone or WhatsApp number<input name="phone" type="tel" required inputmode="tel" placeholder="+91"></label>
+          <label>How would you like to see it?
+            <select name="how"><option>In person</option><option>On a live video call</option><option>Send me the walk-through video</option></select></label>
+          <button class="btn solid" type="submit">Book a viewing</button>
+          <p class="fine">Opens WhatsApp with your details filled in. Viewings are in person, on a live video call, or we send you the full walk-through video.</p>
+        </form>
+      </div>
     </div>
   </div>
 </section>
@@ -441,13 +420,12 @@
       <details open><summary>Is there really no curfew?</summary><p>Really. The flat has a biometric lock and you have your own code. Safety comes from verified housemates, a gated society and CCTV at the door, not from a gate that locks at ten.</p></details>
       <details><summary>Who will I be living with?</summary><p>Working professionals and students, mostly in their twenties, co-ed. Every housemate goes through the same ID check and intro call you will, and you can meet whoever's home when you visit.</p></details>
       <details><summary>What's the minimum stay?</summary><p>Three months. The agreement runs eleven months and can be renewed; after the minimum stay either side can end it with thirty days' notice.</p></details>
-      <details><summary>What do I pay for beyond the rent?</summary><p>Your share of electricity, LPG, and a cook or house-help if you choose to have one, all at actuals. Society move-in charges where the society asks for them. Everything else in the list above is in the rent.</p></details>
+      <details><summary>What do I pay for beyond the rent?</summary><p>Your share of electricity, LPG, and a cook or house-help if you choose to have one, all at actuals. Society move-in charges where the society asks for them. Everything else under What's included is in the rent.</p></details>
       <details><summary>Can friends or family visit?</summary><p>Yes. The house agrees its own guest hours together, with a heads-up to housemates for overnight stays. Pets aren't permitted.</p></details>
       <details><summary>How do repairs and emergencies work?</summary><p>Message support on working days between 10 am and 7 pm. A water leak, a power failure or anything to do with safety is answered at any hour on the emergency number you get at move-in.</p></details>
     </div>
   </div>
 </section>
-
 
 <!-- ===== CLOSE ===== -->
 <section class="close" id="close">
@@ -463,16 +441,6 @@
         <a class="btn" id="mailBtn">Email</a>
       </div>
     </div>
-    <div class="composer rv d2" id="composer">
-      <div class="q">I am a…</div>
-      <div class="chips" data-key="who"><button class="chip on" data-v="working professional">Working professional</button><button class="chip" data-v="student">Student</button><button class="chip" data-v="parent enquiring for my child">Parent enquiring</button></div>
-      <div class="q">Moving in…</div>
-      <div class="chips" data-key="when"><button class="chip on" data-v="as soon as possible">ASAP</button><button class="chip" data-v="within a month">Within a month</button><button class="chip" data-v="in 1–3 months">In 1–3 months</button><button class="chip" data-v="just exploring for now">Just exploring</button></div>
-      <div class="q">I'd like…</div>
-      <div class="chips" data-key="how"><button class="chip on" data-v="to visit in person">To visit in person</button><button class="chip" data-v="a live video walk-through">A video walk-through</button><button class="chip" data-v="to know what's included and the terms first">The terms first</button></div>
-      <p class="pv" id="pv"></p>
-      <div class="acts"><a class="btn solid" id="sendWa" target="_blank" rel="noopener">Send on WhatsApp</a></div>
-    </div>
     <div class="foot">
       <div class="l"><a id="igFoot" target="_blank" rel="noopener">Instagram</a><a id="mailFoot">Email</a><a target="_blank" rel="noopener" data-wa="Hi! I own a flat in Ahmedabad and would like to talk about partnering with Halapeno Homes.">List your flat</a></div>
       <div>© <span id="yr"></span> Halapeno Homes · Ahmedabad</div>
@@ -482,8 +450,8 @@
 </section>
 </main>
 <div class="sticky" aria-hidden="false">
-  <a class="btn solid" target="_blank" rel="noopener" data-wa="Hi Halapeno Homes! I'd like to book a visit.">Book a visit</a>
-  <a class="btn" href="#way">The terms</a>
+  <a class="btn solid" href="#book">Book a viewing</a>
+  <a class="btn" href="#gallery">Gallery</a>
 </div>
 
 <script>
@@ -551,24 +519,19 @@ const menu=$("#menu"); $("#burger").onclick=()=>menu.classList.toggle("open"); $
   addEventListener("scroll",()=>requestAnimationFrame(orbR),{passive:true}); orbR();
 })();
 
-/* ---- composer: three taps → a WhatsApp message in the visitor's own words ---- */
+/* ---- gallery video: match the box to the film's real shape ---- */
 (function(){
-  const st={who:"working professional",when:"as soon as possible",how:"to visit in person"}, pv=$("#pv"), send=$("#sendWa"); if(!pv) return;
-  const build=()=>{const t=`Hi Halapeno Homes! I'm a ${st.who}, looking to move in ${st.when}. I'd like ${st.how}.`;pv.textContent=t;send.href=wa(t)};
-  $$(".chips").forEach(g=>g.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;$$(".chip",g).forEach(c=>c.classList.toggle("on",c===b));st[g.dataset.key]=b.dataset.v;build()}));
-  build();
+  const v=$("#galVid"); if(!v) return;
+  const fit=()=>{ if(!v.videoWidth) return; v.style.aspectRatio=v.videoWidth+"/"+v.videoHeight; v.closest(".gbody").classList.toggle("wide",v.videoWidth>v.videoHeight); };
+  v.addEventListener("loadedmetadata",fit); fit();
 })();
 
-/* ---- before / after: drag the handle; settles to 46% the first time it scrolls into view ---- */
+/* ---- book a viewing: name + number → WhatsApp, pre-filled ---- */
 (function(){
-  const el=$("#compare"); if(!el) return; let drag=false;
-  const set=x=>{const r=el.getBoundingClientRect();el.style.setProperty("--pos",Math.max(2,Math.min(98,(x-r.left)/r.width*100))+"%")};
-  el.addEventListener("pointerdown",e=>{drag=true;set(e.clientX);el.setPointerCapture(e.pointerId)});
-  el.addEventListener("pointermove",e=>{if(drag)set(e.clientX)});
-  el.addEventListener("pointerup",()=>drag=false); el.addEventListener("pointercancel",()=>drag=false);
-  if(!reduce){const io=new IntersectionObserver(es=>{if(!es[0].isIntersecting)return;io.disconnect();let t0=null;const from=92,to=46;
-    const step=ts=>{t0=t0||ts;const k=Math.min(1,(ts-t0)/1400),e=1-Math.pow(1-k,3);el.style.setProperty("--pos",(from+(to-from)*e)+"%");if(k<1&&!drag)requestAnimationFrame(step)};
-    el.style.setProperty("--pos","92%");requestAnimationFrame(step)},{threshold:.5});io.observe(el)}
+  const f=$("#viewForm"); if(!f) return;
+  f.addEventListener("submit",e=>{e.preventDefault();const d=Object.fromEntries(new FormData(f).entries());
+    const msg=`Hi Halapeno Homes! I'd like to book a viewing.\nName: ${d.name}\nNumber: ${d.phone}\nPreferred: ${d.how}`;
+    window.open(wa(msg),"_blank","noopener");});
 })();
 
 /* ---- reveals: fire once, never un-reveal; only when motion is allowed ---- */

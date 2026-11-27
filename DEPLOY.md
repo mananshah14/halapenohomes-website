@@ -50,7 +50,7 @@ GitHub → your profile **Settings → Pages → Add a domain** → `halapenohom
 ## 5. After go-live
 
 - Open https://halapenohomes.com on a phone and a laptop; scroll the hero (portal opens), throw the deck cards, click a WhatsApp button.
-- **The WhatsApp number, Instagram and email are still placeholders** (`910000000000`, `halapenohomes`, `hello@halapenohomes.com`) and bed availability is sample data. Edit the `CONFIG` block at the bottom of `src/template.html`, run `python3 src/build.py`, commit, push. Pages redeploys in about a minute.
+- **The WhatsApp number, Instagram and email are still placeholders** (`910000000000`, `halapenohomes`, `hello@halapenohomes.com`). Edit the `CONFIG` block at the bottom of `src/template.html`, run `python3 src/build.py`, commit, push. Pages redeploys in about a minute.
 - Every future change is the same loop: edit `src/template.html` → `python3 src/build.py` → commit → push.
 
 ## Troubleshooting
