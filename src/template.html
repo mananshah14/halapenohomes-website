@@ -59,25 +59,22 @@
   .links a:hover{color:var(--acc)}
   .nav .btn{height:34px;padding:0 16px;font-size:10px}
 
-  /* ===== STEP-INSIDE HERO (scroll-bound walkthrough: door → mirror → bedroom by day → lights on) ===== */
-  .portal{height:400vh;position:relative}
-  .stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;isolation:isolate;background:var(--ground-2)}
-  .stage .fr{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;will-change:transform,opacity;transform:scale(1.04)}
-  .stage .fr.f0{opacity:1;object-position:50% 50%}
-  .stage .fr.f1{object-position:50% 45%}
-  .stage .fr.f2,.stage .fr.f3{object-position:50% 30%}
-  .stage .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(84,62,44,.55),rgba(84,62,44,.35) 50%,rgba(84,62,44,.7));z-index:2}
-  .stage .dusk{position:absolute;inset:0;background:var(--ground-2);opacity:0;z-index:3}
-  .stage .glow{position:absolute;inset:0;background:radial-gradient(ellipse 70% 45% at 50% 18%,rgba(234,220,204,.55),rgba(157,129,100,.25) 45%,transparent 75%);mix-blend-mode:screen;opacity:0;z-index:4}
-  .stage .veil{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 45%,rgba(84,62,44,.6) 100%);z-index:5}
-  .mark{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);z-index:6;display:flex;justify-content:center;gap:.22em;font-family:var(--display);font-weight:600;font-size:clamp(44px,8.6vw,136px);letter-spacing:-.02em;line-height:1;color:var(--ink);white-space:nowrap;will-change:transform,letter-spacing,opacity;pointer-events:none}
+  /* ===== PORTAL HERO ===== */
+  .portal{height:250vh;position:relative}
+  .stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;isolation:isolate;background:var(--ground)}
+  .stage .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;transform:scale(1.18);will-change:transform}
+  .stage .duo{position:absolute;inset:0;background:linear-gradient(135deg,var(--olive),var(--tan));mix-blend-mode:overlay;opacity:0}
+  .stage .veil{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 35%,rgba(84,62,44,.75) 100%)}
+  .panel{position:absolute;top:0;bottom:0;width:52%;background:var(--ground);will-change:transform;z-index:3}
+  .panel.l{left:0}.panel.r{right:0}
+  .dot{position:absolute;left:50%;top:50%;width:7px;height:7px;border-radius:50%;background:var(--acc);box-shadow:0 0 12px 2px rgba(157,129,100,.7);transform:translate(-50%,-50%);z-index:4;will-change:transform}
+  .dot.b{background:var(--acc-2);box-shadow:0 0 12px 2px rgba(234,220,204,.6)}
+  .mark{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);z-index:5;display:flex;justify-content:center;gap:.22em;font-family:var(--display);font-weight:600;font-size:clamp(44px,8.6vw,136px);letter-spacing:-.02em;line-height:1;color:var(--ink);white-space:nowrap;will-change:transform,letter-spacing;pointer-events:none}
   .mark span{display:inline-block;will-change:transform}
-  .cap{position:absolute;left:clamp(20px,4vw,56px);bottom:clamp(56px,9vh,96px);z-index:7;opacity:0;will-change:opacity,transform;pointer-events:none;max-width:min(80vw,620px)}
-  .cap b{display:block;font-family:var(--display);font-weight:600;font-size:clamp(26px,3.6vw,52px);letter-spacing:-.025em;line-height:1.02;color:var(--ink)}
-  .cap b .script{font-size:1.25em;color:var(--acc-2)}
-  .cap small{display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin-bottom:12px}
-  .meta{position:absolute;z-index:8;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:var(--ink-2);white-space:nowrap}
+  .meta{position:absolute;z-index:6;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:var(--ink-2);white-space:nowrap}
   .meta.tl{left:clamp(20px,4vw,56px);top:calc(var(--nav) + 22px)}
+  .meta.tr{right:clamp(20px,4vw,56px);top:calc(var(--nav) + 22px);text-align:right}
+  .meta.bl{left:clamp(20px,4vw,56px);bottom:26px}
   .meta.br{right:clamp(20px,4vw,56px);bottom:26px;text-align:right}
   .meta b{color:var(--acc);font-weight:400}
   .meta .scr{display:inline-block;width:34px;height:1px;background:var(--ink-2);vertical-align:middle;margin-left:10px}
@@ -186,7 +183,7 @@
   .menu .lbl{margin-top:30px}
 
   @media (max-width:960px){
-    .portal{height:300svh}
+    .portal{height:150svh}
     .links{display:none}
     .burger{display:flex}
     .homes .wrap,.ba .wrap{grid-template-columns:1fr}
@@ -220,24 +217,17 @@
 
 <main id="top">
 
-<!-- ===== STEP-INSIDE HERO ===== -->
-<section class="portal" id="portal" aria-label="Halapeno Homes — step inside">
+<!-- ===== PORTAL HERO ===== -->
+<section class="portal" id="portal" aria-label="Halapeno Homes">
   <div class="stage" id="stage">
-    <img class="fr f0" id="f0" src="{{IMG:hero-door.jpg}}" alt="The front door of a Halapeno home, open onto a warmly lit entrance" fetchpriority="high">
-    <img class="fr f1" id="f1" src="{{IMG:hero-mirror.jpg}}" alt="The entrance: a backlit round mirror and a rack for shoes and coats" loading="eager">
-    <img class="fr f2" id="f2" src="{{IMG:hero-day.jpg}}" alt="A bedroom by day: two beds either side of a window with drawers beneath it" loading="eager">
-    <img class="fr f3" id="f3" src="{{IMG:hero-night.jpg}}" alt="The same bedroom at night with the cove lighting on" loading="eager">
-    <div class="shade" id="shade"></div>
-    <div class="dusk" id="dusk"></div>
-    <div class="glow" id="glow"></div>
+    <img class="ph" id="ph" src="{{IMG:living-after-hero.jpg}}" alt="A Halapeno Homes living room at night — ambient lighting, sofa and bean bag" fetchpriority="high">
+    <div class="duo" id="duo"></div>
     <div class="veil"></div>
+    <div class="panel l" id="pl"></div><div class="panel r" id="pr"></div>
+    <i class="dot a" id="dotA"></i><i class="dot b" id="dotB"></i>
     <h1 class="mark" id="mark"><span id="w1">Halapeno</span><span id="w2">Homes</span></h1>
-    <div class="cap" id="c0"><small>01 · The door</small><b>Lock clicks.</b></div>
-    <div class="cap" id="c1"><small>02 · The entrance</small><b>The mirror lights up.</b></div>
-    <div class="cap" id="c2"><small>03 · Your room</small><b>Your room, by day.</b></div>
-    <div class="cap" id="c3"><small>04 · Evening</small><b>Lights on. <span class="script">You're home.</span></b></div>
     <div class="meta tl">Ahmedabad</div>
-    <div class="meta br" id="cue">Scroll to step inside<span class="scr"></span></div>
+    <div class="meta br">Scroll to open<span class="scr"></span></div>
   </div>
 </section>
 
@@ -373,49 +363,37 @@ $("#yr").textContent=new Date().getFullYear();
 const menu=$("#menu"); $("#burger").onclick=()=>menu.classList.toggle("open"); $$("#menu a").forEach(a=>a.onclick=()=>menu.classList.remove("open"));
 
 /* ---- PORTAL: everything bound to scroll position (reversible) ---- */
-(function walkthrough(){
-  const portal=$("#portal"), f=[0,1,2,3].map(i=>$("#f"+i)), c=[0,1,2,3].map(i=>$("#c"+i));
-  const shade=$("#shade"), dusk=$("#dusk"), glow=$("#glow"), mark=$("#mark"), w1=$("#w1"), w2=$("#w2"), cue=$("#cue");
-  const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
-  const seg=(p,a,b)=>clamp((p-a)/(b-a));                       // 0→1 across [a,b]
+(function portal(){
+  const portal=$("#portal"), pl=$("#pl"), pr=$("#pr"), ph=$("#ph"), duo=$("#duo"), mark=$("#mark"), w1=$("#w1"), w2=$("#w2"), dA=$("#dotA"), dB=$("#dotB"), metas=$$(".meta");
   const ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
   const gapPx=()=>parseFloat(getComputedStyle(mark).columnGap||getComputedStyle(mark).gap)||0;
   let ticking=false;
   function render(){
     ticking=false;
-    const vh=innerHeight, total=portal.offsetHeight-vh, y=clamp(-portal.getBoundingClientRect().top,0,total);
-    const p=total>0?y/total:0;
-    // ---- frames: each one dollies in while it is on screen, and dissolves into the next
-    const o0=1-seg(p,.20,.32), o1=seg(p,.20,.32)*(1-seg(p,.48,.60)), o2=seg(p,.48,.60), o3=seg(p,.77,.83);
-    f[0].style.opacity=o0;  f[0].style.transform=`scale(${1.04+.10*seg(p,0,.32)})`;
-    f[1].style.opacity=o1;  f[1].style.transform=`scale(${.98+.12*seg(p,.20,.60)})`;
-    const sBed=1.00+.035*seg(p,.48,1);
-    f[2].style.opacity=o2;  f[2].style.transform=`scale(${sBed})`;
-    f[3].style.opacity=o3;  f[3].style.transform=`scale(${sBed})`;
-    // ---- evening falls, then the cove lights come on
-    const d=seg(p,.66,.76)*.96*(1-seg(p,.84,.94)); dusk.style.opacity=d.toFixed(3);
-    glow.style.opacity=(seg(p,.84,.94)*.75-seg(p,.94,1)*.3).toFixed(3);
-    // ---- wordmark: grows + tightens + splits over the door, then leaves
-    const e=ease(seg(p,0,.24));
-    const pad=Math.max(16,innerWidth*.03), T=w1.offsetWidth+w2.offsetWidth+gapPx(), sMax=Math.max(1,Math.min(1.34,(innerWidth-2*pad)/T)), sc=1+(sMax-1)*e;
-    mark.style.transform=`translateY(-50%) scale(${sc})`; mark.style.letterSpacing=(-.02-.04*e)+"em";
-    const room=Math.max(0,(innerWidth/2-pad)-(T/2)*sc)/sc, tx=Math.min(room,w1.offsetWidth*.5)*e;
+    const vh=innerHeight, total=portal.offsetHeight-vh, y=Math.min(Math.max(-portal.getBoundingClientRect().top,0),total);
+    const p=total>0?y/total:0, e=ease(p);
+    // panels clear the frame entirely
+    pl.style.transform=`translate3d(${-e*115}%,0,0)`; pr.style.transform=`translate3d(${e*115}%,0,0)`;
+    // image settles, duotone rises
+    ph.style.transform=`scale(${1.18-.18*e})`; duo.style.opacity=(.38*e).toFixed(3);
+    // dots travel to opposite corners
+    dA.style.transform=`translate(calc(-50% + ${-e*46}vw), calc(-50% + ${-e*42}vh))`; dB.style.transform=`translate(calc(-50% + ${e*46}vw), calc(-50% + ${e*42}vh))`;
+    // wordmark grows while tracking tightens; halves travel ~half their width to opposite edges
+    // grow + tighten together; cap the scale so the open title still fits the viewport
+    const pad=Math.max(16,innerWidth*.03), T=w1.offsetWidth+w2.offsetWidth+gapPx(), sMax=Math.max(1,Math.min(1.34,(innerWidth-2*pad)/T)), s=1+(sMax-1)*e;
+    mark.style.transform=`translateY(-50%) scale(${s})`; mark.style.letterSpacing=(-.02-.04*e)+"em";
+    // halves travel outward until their outer edges reach the page padding
+    const room=Math.max(0,(innerWidth/2-pad)-(T/2)*s)/s;           // px of travel available inside the scaled title
+    const tx=Math.min(room, w1.offsetWidth*.5)*e;                   // ≈ half their own width, never past the edge
     w1.style.transform=`translate3d(${-tx}px,0,0)`; w2.style.transform=`translate3d(${tx}px,0,0)`;
-    mark.style.opacity=1-seg(p,.18,.28);
-    shade.style.opacity=.9-.9*seg(p,.14,.30);
-    // ---- captions
-    const show=[ seg(p,.03,.09)*(1-seg(p,.16,.22)), seg(p,.30,.36)*(1-seg(p,.44,.50)), seg(p,.58,.64)*(1-seg(p,.68,.74)), seg(p,.90,.97) ];
-    c.forEach((el,i)=>{el.style.opacity=show[i].toFixed(3);el.style.transform=`translate3d(0,${(1-show[i])*14}px,0)`});
-    cue.style.opacity=1-seg(p,.02,.10);
-    $("#nav").style.background=`rgba(124,113,78,${.55+.3*seg(p,0,.5)})`;
+    metas.forEach(m=>m.style.opacity=(1-Math.min(1,p*2.2)).toFixed(3));
+    $("#nav").style.background=`rgba(124,113,78,${.55+.3*Math.min(1,p*2)})`;
   }
   const req=()=>{if(!ticking){ticking=true;requestAnimationFrame(render)}};
-  if(reduce){ // reduced motion: the finished state, no scrolling choreography
-    portal.style.height="100svh"; f.forEach((x,i)=>{x.style.opacity=i===3?1:0;x.style.transform="none"}); glow.style.opacity=.4; shade.style.opacity=.55; c[3].style.opacity=1; cue.style.display="none";
-  } else { addEventListener("scroll",req,{passive:true}); addEventListener("resize",req); render(); }
+  addEventListener("scroll",req,{passive:true}); addEventListener("resize",req); render();
   // statement fold orb: drifts and rotates with scroll (reversible)
   const orb=$("#orb"), fold=$("#fold");
-  function orbR(){const r=fold.getBoundingClientRect();const t=clamp((innerHeight-r.top)/(innerHeight+r.height));orb.style.transform=`translateY(calc(-50% + ${(t-.5)*-160}px)) rotate(${(t-.5)*40}deg)`;}
+  function orbR(){const r=fold.getBoundingClientRect();const t=Math.min(Math.max((innerHeight-r.top)/(innerHeight+r.height),0),1);orb.style.transform=`translateY(calc(-50% + ${(t-.5)*-160}px)) rotate(${(t-.5)*40}deg)`;}
   addEventListener("scroll",()=>requestAnimationFrame(orbR),{passive:true}); orbR();
 })();
 
