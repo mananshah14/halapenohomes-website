@@ -59,22 +59,25 @@
   .links a:hover{color:var(--acc)}
   .nav .btn{height:34px;padding:0 16px;font-size:10px}
 
-  /* ===== PORTAL HERO ===== */
-  .portal{height:250vh;position:relative}
-  .stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;isolation:isolate;background:var(--ground)}
-  .stage .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;transform:scale(1.18);will-change:transform}
-  .stage .duo{position:absolute;inset:0;background:linear-gradient(135deg,var(--olive),var(--tan));mix-blend-mode:overlay;opacity:0}
-  .stage .veil{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 35%,rgba(84,62,44,.75) 100%)}
-  .panel{position:absolute;top:0;bottom:0;width:52%;background:var(--ground);will-change:transform;z-index:3}
-  .panel.l{left:0}.panel.r{right:0}
-  .dot{position:absolute;left:50%;top:50%;width:7px;height:7px;border-radius:50%;background:var(--acc);box-shadow:0 0 12px 2px rgba(157,129,100,.7);transform:translate(-50%,-50%);z-index:4;will-change:transform}
-  .dot.b{background:var(--acc-2);box-shadow:0 0 12px 2px rgba(234,220,204,.6)}
-  .mark{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);z-index:5;display:flex;justify-content:center;gap:.22em;font-family:var(--display);font-weight:600;font-size:clamp(44px,8.6vw,136px);letter-spacing:-.02em;line-height:1;color:var(--ink);white-space:nowrap;will-change:transform,letter-spacing;pointer-events:none}
+  /* ===== STEP-INSIDE HERO (scroll-bound walkthrough: door → mirror → bedroom by day → lights on) ===== */
+  .portal{height:400vh;position:relative}
+  .stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;isolation:isolate;background:var(--ground-2)}
+  .stage .fr{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;will-change:transform,opacity;transform:scale(1.04)}
+  .stage .fr.f0{opacity:1;object-position:50% 50%}
+  .stage .fr.f1{object-position:50% 45%}
+  .stage .fr.f2,.stage .fr.f3{object-position:50% 30%}
+  .stage .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(84,62,44,.55),rgba(84,62,44,.35) 50%,rgba(84,62,44,.7));z-index:2}
+  .stage .dusk{position:absolute;inset:0;background:var(--ground-2);opacity:0;z-index:3}
+  .stage .glow{position:absolute;inset:0;background:radial-gradient(ellipse 70% 45% at 50% 18%,rgba(234,220,204,.55),rgba(157,129,100,.25) 45%,transparent 75%);mix-blend-mode:screen;opacity:0;z-index:4}
+  .stage .veil{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 45%,rgba(84,62,44,.6) 100%);z-index:5}
+  .mark{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);z-index:6;display:flex;justify-content:center;gap:.22em;font-family:var(--display);font-weight:600;font-size:clamp(44px,8.6vw,136px);letter-spacing:-.02em;line-height:1;color:var(--ink);white-space:nowrap;will-change:transform,letter-spacing,opacity;pointer-events:none}
   .mark span{display:inline-block;will-change:transform}
-  .meta{position:absolute;z-index:6;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:var(--ink-2);white-space:nowrap}
+  .cap{position:absolute;left:clamp(20px,4vw,56px);bottom:clamp(56px,9vh,96px);z-index:7;opacity:0;will-change:opacity,transform;pointer-events:none;max-width:min(80vw,620px)}
+  .cap b{display:block;font-family:var(--display);font-weight:600;font-size:clamp(26px,3.6vw,52px);letter-spacing:-.025em;line-height:1.02;color:var(--ink)}
+  .cap b .script{font-size:1.25em;color:var(--acc-2)}
+  .cap small{display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin-bottom:12px}
+  .meta{position:absolute;z-index:8;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:var(--ink-2);white-space:nowrap}
   .meta.tl{left:clamp(20px,4vw,56px);top:calc(var(--nav) + 22px)}
-  .meta.tr{right:clamp(20px,4vw,56px);top:calc(var(--nav) + 22px);text-align:right}
-  .meta.bl{left:clamp(20px,4vw,56px);bottom:26px}
   .meta.br{right:clamp(20px,4vw,56px);bottom:26px;text-align:right}
   .meta b{color:var(--acc);font-weight:400}
   .meta .scr{display:inline-block;width:34px;height:1px;background:var(--ink-2);vertical-align:middle;margin-left:10px}
@@ -124,6 +127,29 @@
   .dots i{width:5px;height:5px;border-radius:50%;background:var(--hair-2);transition:background .3s,transform .3s;cursor:pointer;padding:0;box-sizing:content-box;border:6px solid transparent;background-clip:padding-box}
   .dots i.on{background:var(--acc);transform:scale(1.4)}
 
+  /* ===== WALK-THROUGH LOOP (phone frame) ===== */
+  .walk{display:flex;align-items:center;gap:22px;margin-top:40px}
+  .phone{width:132px;aspect-ratio:9/16;border-radius:22px;border:1.5px solid var(--hair-2);padding:6px;background:var(--ground-2);flex-shrink:0}
+  .phone video{width:100%;height:100%;object-fit:cover;border-radius:16px;display:block;background:#000}
+  .walk p{font-size:12px;letter-spacing:.02em;color:var(--ink-2);max-width:22ch;line-height:1.6}
+  .walk p b{display:block;font-family:var(--display);font-weight:600;font-size:14px;color:var(--ink);letter-spacing:0;margin-bottom:4px}
+
+  /* ===== BEFORE / AFTER ===== */
+  .ba{background:var(--ground-2);padding:clamp(90px,11vw,150px) 0}
+  .ba .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,6vw,100px);align-items:center}
+  .ba h2{font-size:clamp(34px,4.6vw,66px)}
+  .ba h2 .script{font-size:1.2em;color:var(--acc-2)}
+  .ba .lede{margin-top:26px;color:var(--ink-2);max-width:46ch;font-size:15px;line-height:1.7}
+  .compare{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:3/4;max-height:78vh;user-select:none;-webkit-user-select:none;touch-action:pan-y;background:var(--ground)}
+  .compare img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+  .compare .after{clip-path:inset(0 0 0 var(--pos,50%))}
+  .compare .handle{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:1px;background:var(--ink);transform:translateX(-.5px);z-index:2}
+  .compare .knob{position:absolute;top:50%;left:var(--pos,50%);transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:var(--cream);color:var(--brown);display:grid;place-items:center;z-index:3;cursor:ew-resize;font-family:var(--display);font-weight:600;font-size:14px}
+  .compare .lbl2{position:absolute;top:16px;padding:7px 12px;border-radius:999px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;z-index:2;font-family:var(--sans)}
+  .compare .lbl2.b{left:16px;background:rgba(84,62,44,.6);color:var(--ink)}
+  .compare .lbl2.a{right:16px;background:rgba(234,220,204,.9);color:var(--brown)}
+  .ba .note{margin-top:14px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+
   /* ===== ROSTER ===== */
   .roster{background:var(--ground-2);padding:clamp(80px,10vw,130px) 0}
   .roster .head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:38px;flex-wrap:wrap}
@@ -160,10 +186,11 @@
   .menu .lbl{margin-top:30px}
 
   @media (max-width:960px){
-    .portal{height:150svh}
+    .portal{height:300svh}
     .links{display:none}
     .burger{display:flex}
-    .homes .wrap{grid-template-columns:1fr}
+    .homes .wrap,.ba .wrap{grid-template-columns:1fr}
+    .compare{max-height:none}
     .row{grid-template-columns:110px 1fr auto;gap:16px}
     .fold .idx{top:40px;font-size:38vw}
     .orb{right:-30vw;width:70vw;opacity:.32}
@@ -193,24 +220,31 @@
 
 <main id="top">
 
-<!-- ===== PORTAL HERO ===== -->
-<section class="portal" id="portal" aria-label="Halapeno Homes">
+<!-- ===== STEP-INSIDE HERO ===== -->
+<section class="portal" id="portal" aria-label="Halapeno Homes — step inside">
   <div class="stage" id="stage">
-    <img class="ph" id="ph" src="{{IMG:living-after-hero.jpg}}" alt="A Halapeno Homes living room at night — ambient lighting, sofa and bean bag" fetchpriority="high">
-    <div class="duo" id="duo"></div>
+    <img class="fr f0" id="f0" src="{{IMG:hero-door.jpg}}" alt="The front door of a Halapeno home, open onto a warmly lit entrance" fetchpriority="high">
+    <img class="fr f1" id="f1" src="{{IMG:hero-mirror.jpg}}" alt="The entrance: a backlit round mirror and a rack for shoes and coats" loading="eager">
+    <img class="fr f2" id="f2" src="{{IMG:hero-day.jpg}}" alt="A bedroom by day: two beds either side of a window with drawers beneath it" loading="eager">
+    <img class="fr f3" id="f3" src="{{IMG:hero-night.jpg}}" alt="The same bedroom at night with the cove lighting on" loading="eager">
+    <div class="shade" id="shade"></div>
+    <div class="dusk" id="dusk"></div>
+    <div class="glow" id="glow"></div>
     <div class="veil"></div>
-    <div class="panel l" id="pl"></div><div class="panel r" id="pr"></div>
-    <i class="dot a" id="dotA"></i><i class="dot b" id="dotB"></i>
     <h1 class="mark" id="mark"><span id="w1">Halapeno</span><span id="w2">Homes</span></h1>
+    <div class="cap" id="c0"><small>01 · The door</small><b>Lock clicks.</b></div>
+    <div class="cap" id="c1"><small>02 · The entrance</small><b>The mirror lights up.</b></div>
+    <div class="cap" id="c2"><small>03 · Your room</small><b>Your room, by day.</b></div>
+    <div class="cap" id="c3"><small>04 · Evening</small><b>Lights on. <span class="script">You're home.</span></b></div>
     <div class="meta tl">Ahmedabad</div>
-    <div class="meta br">Scroll to open<span class="scr"></span></div>
+    <div class="meta br" id="cue">Scroll to step inside<span class="scr"></span></div>
   </div>
 </section>
 
 <!-- ===== STATEMENT FOLD ===== -->
 <section class="fold" id="fold">
   <div class="idx" aria-hidden="true">01</div>
-  <div class="orb" id="orb" aria-hidden="true"><img src="{{IMG:sq-lamp.jpg}}" alt=""></div>
+  <div class="orb" id="orb" aria-hidden="true"><img src="{{IMG:sq-entrance.jpg}}" alt=""></div>
   <div class="wrap">
     <span class="lbl acc rv">What Halapeno Homes means</span>
     <h2 class="rv d1">A curated living space where strangers become friends and a house becomes home, <span class="acc">a space that</span> <span class="script">finally feels like ghar.</span></h2>
@@ -224,7 +258,7 @@
     <div>
       <span class="lbl acc rv">Our homes · Ahmedabad</span>
       <h2 class="rv d1" style="margin-top:22px">Homes with a little <span class="script">personality.</span></h2>
-      <p class="lede rv d2">Every Halapeno home is a full flat in a gated society, taken from a bare shell to a home with ambient lighting, curated furniture and room for four people who'll actually know each other's names. It's a place to unwind, socialise and build your network in a new city, and every home has a personality of its own. Throw the cards to walk through the first one.</p>
+      <p class="lede rv d2">Every Halapeno home is a full flat in a gated society, taken from a bare shell to a home with ambient lighting, curated furniture and room for four people who'll actually know each other's names. It's a place to unwind, socialise and build your network in a new city, and every home has a personality of its own. Throw the cards to walk through the rooms.</p>
       <div class="acts rv d3">
         <a class="btn solid" target="_blank" rel="noopener" data-wa="Hi Halapeno Homes! I'd like to visit the S.G. Highway home.">Book a visit</a>
         <a class="btn" href="#roster">What's included</a>
@@ -233,11 +267,35 @@
         <div><b>4</b><span>housemates per flat</span></div>
         <div><b>2 + 2</b><span>bedrooms · bathrooms</span></div>
       </div>
+      <div class="walk rv d3">
+        <div class="phone"><video src="{{VID:walk.mp4}}" poster="{{IMG:walk-poster.jpg}}" muted autoplay loop playsinline preload="metadata" aria-label="A twelve-second walk through the bedrooms"></video></div>
+        <p><b>A 12-second walk-through</b>Shot on a phone, no filters. The rooms as they are.</p>
+      </div>
     </div>
     <div class="deckwrap rv d1">
       <div class="deck" id="deck" tabindex="0" role="region" aria-label="Home gallery. Use left and right arrow keys or drag to flip through." aria-roledescription="card deck"></div>
       <div class="hint" id="hint">Drag, or use <b>←</b> <b>→</b> · left is next, right is back</div>
       <div class="dots" id="dots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BEFORE / AFTER ===== -->
+<section class="ba" id="ba">
+  <div class="wrap">
+    <div>
+      <span class="lbl acc rv">Before → after</span>
+      <h2 class="rv d1" style="margin-top:22px">From a shell to <span class="script">a home.</span></h2>
+      <p class="lede rv d2">Drag the handle. Every Halapeno home starts as a bare flat and ends as somewhere you'd invite your parents to. This is the living room: the shell we took over, and the design we're finishing now.</p>
+    </div>
+    <div>
+      <div class="compare rv d1" id="compare" style="--pos:50%">
+        <img src="{{IMG:living-before.jpg}}" alt="The bare living room before Halapeno furnished it" class="before">
+        <img src="{{IMG:living-after.jpg}}" alt="The living room design: ambient lighting, sofa, bean bag and shelving" class="after">
+        <span class="lbl2 b">Before</span><span class="lbl2 a">After</span>
+        <div class="handle"></div><div class="knob" aria-label="Drag to compare">⟷</div>
+      </div>
+      <div class="note rv d2">Living room · finishing now</div>
     </div>
   </div>
 </section>
@@ -315,38 +373,62 @@ $("#yr").textContent=new Date().getFullYear();
 const menu=$("#menu"); $("#burger").onclick=()=>menu.classList.toggle("open"); $$("#menu a").forEach(a=>a.onclick=()=>menu.classList.remove("open"));
 
 /* ---- PORTAL: everything bound to scroll position (reversible) ---- */
-(function portal(){
-  const portal=$("#portal"), pl=$("#pl"), pr=$("#pr"), ph=$("#ph"), duo=$("#duo"), mark=$("#mark"), w1=$("#w1"), w2=$("#w2"), dA=$("#dotA"), dB=$("#dotB"), metas=$$(".meta");
+(function walkthrough(){
+  const portal=$("#portal"), f=[0,1,2,3].map(i=>$("#f"+i)), c=[0,1,2,3].map(i=>$("#c"+i));
+  const shade=$("#shade"), dusk=$("#dusk"), glow=$("#glow"), mark=$("#mark"), w1=$("#w1"), w2=$("#w2"), cue=$("#cue");
+  const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+  const seg=(p,a,b)=>clamp((p-a)/(b-a));                       // 0→1 across [a,b]
   const ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
   const gapPx=()=>parseFloat(getComputedStyle(mark).columnGap||getComputedStyle(mark).gap)||0;
   let ticking=false;
   function render(){
     ticking=false;
-    const vh=innerHeight, total=portal.offsetHeight-vh, y=Math.min(Math.max(-portal.getBoundingClientRect().top,0),total);
-    const p=total>0?y/total:0, e=ease(p);
-    // panels clear the frame entirely
-    pl.style.transform=`translate3d(${-e*115}%,0,0)`; pr.style.transform=`translate3d(${e*115}%,0,0)`;
-    // image settles, duotone rises
-    ph.style.transform=`scale(${1.18-.18*e})`; duo.style.opacity=(.38*e).toFixed(3);
-    // dots travel to opposite corners
-    dA.style.transform=`translate(calc(-50% + ${-e*46}vw), calc(-50% + ${-e*42}vh))`; dB.style.transform=`translate(calc(-50% + ${e*46}vw), calc(-50% + ${e*42}vh))`;
-    // wordmark grows while tracking tightens; halves travel ~half their width to opposite edges
-    // grow + tighten together; cap the scale so the open title still fits the viewport
-    const pad=Math.max(16,innerWidth*.03), T=w1.offsetWidth+w2.offsetWidth+gapPx(), sMax=Math.max(1,Math.min(1.34,(innerWidth-2*pad)/T)), s=1+(sMax-1)*e;
-    mark.style.transform=`translateY(-50%) scale(${s})`; mark.style.letterSpacing=(-.02-.04*e)+"em";
-    // halves travel outward until their outer edges reach the page padding
-    const room=Math.max(0,(innerWidth/2-pad)-(T/2)*s)/s;           // px of travel available inside the scaled title
-    const tx=Math.min(room, w1.offsetWidth*.5)*e;                   // ≈ half their own width, never past the edge
+    const vh=innerHeight, total=portal.offsetHeight-vh, y=clamp(-portal.getBoundingClientRect().top,0,total);
+    const p=total>0?y/total:0;
+    // ---- frames: each one dollies in while it is on screen, and dissolves into the next
+    const o0=1-seg(p,.20,.32), o1=seg(p,.20,.32)*(1-seg(p,.48,.60)), o2=seg(p,.48,.60), o3=seg(p,.77,.83);
+    f[0].style.opacity=o0;  f[0].style.transform=`scale(${1.04+.10*seg(p,0,.32)})`;
+    f[1].style.opacity=o1;  f[1].style.transform=`scale(${.98+.12*seg(p,.20,.60)})`;
+    const sBed=1.00+.035*seg(p,.48,1);
+    f[2].style.opacity=o2;  f[2].style.transform=`scale(${sBed})`;
+    f[3].style.opacity=o3;  f[3].style.transform=`scale(${sBed})`;
+    // ---- evening falls, then the cove lights come on
+    const d=seg(p,.66,.76)*.96*(1-seg(p,.84,.94)); dusk.style.opacity=d.toFixed(3);
+    glow.style.opacity=(seg(p,.84,.94)*.75-seg(p,.94,1)*.3).toFixed(3);
+    // ---- wordmark: grows + tightens + splits over the door, then leaves
+    const e=ease(seg(p,0,.24));
+    const pad=Math.max(16,innerWidth*.03), T=w1.offsetWidth+w2.offsetWidth+gapPx(), sMax=Math.max(1,Math.min(1.34,(innerWidth-2*pad)/T)), sc=1+(sMax-1)*e;
+    mark.style.transform=`translateY(-50%) scale(${sc})`; mark.style.letterSpacing=(-.02-.04*e)+"em";
+    const room=Math.max(0,(innerWidth/2-pad)-(T/2)*sc)/sc, tx=Math.min(room,w1.offsetWidth*.5)*e;
     w1.style.transform=`translate3d(${-tx}px,0,0)`; w2.style.transform=`translate3d(${tx}px,0,0)`;
-    metas.forEach(m=>m.style.opacity=(1-Math.min(1,p*2.2)).toFixed(3));
-    $("#nav").style.background=`rgba(124,113,78,${.55+.3*Math.min(1,p*2)})`;
+    mark.style.opacity=1-seg(p,.18,.28);
+    shade.style.opacity=.9-.9*seg(p,.14,.30);
+    // ---- captions
+    const show=[ seg(p,.03,.09)*(1-seg(p,.16,.22)), seg(p,.30,.36)*(1-seg(p,.44,.50)), seg(p,.58,.64)*(1-seg(p,.68,.74)), seg(p,.90,.97) ];
+    c.forEach((el,i)=>{el.style.opacity=show[i].toFixed(3);el.style.transform=`translate3d(0,${(1-show[i])*14}px,0)`});
+    cue.style.opacity=1-seg(p,.02,.10);
+    $("#nav").style.background=`rgba(124,113,78,${.55+.3*seg(p,0,.5)})`;
   }
   const req=()=>{if(!ticking){ticking=true;requestAnimationFrame(render)}};
-  addEventListener("scroll",req,{passive:true}); addEventListener("resize",req); render();
+  if(reduce){ // reduced motion: the finished state, no scrolling choreography
+    portal.style.height="100svh"; f.forEach((x,i)=>{x.style.opacity=i===3?1:0;x.style.transform="none"}); glow.style.opacity=.4; shade.style.opacity=.55; c[3].style.opacity=1; cue.style.display="none";
+  } else { addEventListener("scroll",req,{passive:true}); addEventListener("resize",req); render(); }
   // statement fold orb: drifts and rotates with scroll (reversible)
   const orb=$("#orb"), fold=$("#fold");
-  function orbR(){const r=fold.getBoundingClientRect();const t=Math.min(Math.max((innerHeight-r.top)/(innerHeight+r.height),0),1);orb.style.transform=`translateY(calc(-50% + ${(t-.5)*-160}px)) rotate(${(t-.5)*40}deg)`;}
+  function orbR(){const r=fold.getBoundingClientRect();const t=clamp((innerHeight-r.top)/(innerHeight+r.height));orb.style.transform=`translateY(calc(-50% + ${(t-.5)*-160}px)) rotate(${(t-.5)*40}deg)`;}
   addEventListener("scroll",()=>requestAnimationFrame(orbR),{passive:true}); orbR();
+})();
+
+/* ---- before / after: drag the handle; settles to 46% the first time it scrolls into view ---- */
+(function(){
+  const el=$("#compare"); if(!el) return; let drag=false;
+  const set=x=>{const r=el.getBoundingClientRect();el.style.setProperty("--pos",Math.max(2,Math.min(98,(x-r.left)/r.width*100))+"%")};
+  el.addEventListener("pointerdown",e=>{drag=true;set(e.clientX);el.setPointerCapture(e.pointerId)});
+  el.addEventListener("pointermove",e=>{if(drag)set(e.clientX)});
+  el.addEventListener("pointerup",()=>drag=false); el.addEventListener("pointercancel",()=>drag=false);
+  if(!reduce){const io=new IntersectionObserver(es=>{if(!es[0].isIntersecting)return;io.disconnect();let t0=null;const from=92,to=46;
+    const step=ts=>{t0=t0||ts;const k=Math.min(1,(ts-t0)/1400),e=1-Math.pow(1-k,3);el.style.setProperty("--pos",(from+(to-from)*e)+"%");if(k<1&&!drag)requestAnimationFrame(step)};
+    el.style.setProperty("--pos","92%");requestAnimationFrame(step)},{threshold:.5});io.observe(el)}
 })();
 
 /* ---- reveals: fire once, never un-reveal; only when motion is allowed ---- */
@@ -357,13 +439,14 @@ if(!reduce){const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersec
   const el=$("#deck"), dots=$("#dots"), hint=$("#hint");
   const home=CONFIG.homes[0];
   const CARDS=[
-    {img:"{{IMG:sq-living.jpg}}", code:home.code+" · 01", t:"The living room", s:"Ambient lighting, curated furniture"},
-    {img:"{{IMG:sq-before.jpg}}", code:home.code+" · 02", t:"Where it started", s:"The bare flat, before Halapeno"},
-    {img:"{{IMG:sq-shelf.jpg}}", code:home.code+" · 03", t:"Shelves & plants", s:"By the window, in the evening light"},
+    {img:"{{IMG:sq-bed-night.jpg}}", code:home.code+" · 01", t:"The bedroom, lights on", s:"Cove lighting, two beds, drawers under the window"},
+    {img:"{{IMG:sq-entrance.jpg}}", code:home.code+" · 02", t:"The entrance", s:"A backlit mirror and a place for your shoes"},
+    {img:"{{IMG:sq-bed-day.jpg}}", code:home.code+" · 03", t:"The bedroom, by day", s:"Curtains drawn, AC on, your side of the room"},
     {type:true, code:home.code+" · 04", h:'Two rooms.<br>Four <span class="script">people.</span>', p:"Two bedrooms with attached bathrooms, a full kitchen and a utility room with a washing machine.", tags:["Two bedrooms","Two bathrooms","Kitchen","Utility"], plan:true},
-    {img:"{{IMG:sq-lamp.jpg}}", code:home.code+" · 05", t:"Lamp on", s:"Evenings on the sofa"},
-    {img:"{{IMG:sq-table.jpg}}", code:home.code+" · 06", t:"Dining for four", s:"House dinners and long conversations"},
-    {type:true, code:home.code+" · 07", h:"A gated society", p:"Off S.G. Highway, with 24×7 security. Your backyard has a pool.", tags:["Pool","Gym","Badminton","Basketball","Movie hall","Library lounge","24×7 security"]},
+    {img:"{{IMG:sq-dining.jpg}}", code:home.code+" · 05", t:"Dining for four", s:"House dinners and long conversations"},
+    {img:"{{IMG:sq-wardrobe.jpg}}", code:home.code+" · 06", t:"Wardrobes & shelves", s:"A full wardrobe each, plus open shelves"},
+    {img:"{{IMG:sq-living.jpg}}", code:home.code+" · 07", t:"The living room", s:"Finishing now — this is the design"},
+    {type:true, code:home.code+" · 08", h:"A gated society", p:"Off S.G. Highway, with 24×7 security. Your backyard has a pool.", tags:["Pool","Gym","Badminton","Basketball","Movie hall","Library lounge","24×7 security"]},
     {type:true, code:CONFIG.homes[1].code, h:'Next home,<br><span class="script">Ahmedabad.</span>', p:"Same rules, same care, a different address. Join the waitlist and be the first to see it.", tags:["Waitlist open","Ahmedabad"], cta:true},
   ];
   const planSvg=`<svg viewBox="0 0 400 150" aria-hidden="true" fill="none" stroke="rgba(234,220,204,.6)" stroke-width="2"><rect x="8" y="20" width="80" height="90"/><rect x="96" y="20" width="36" height="60"/><rect x="140" y="8" width="108" height="130"/><rect x="256" y="0" width="44" height="112"/><rect x="308" y="20" width="84" height="96"/><rect x="18" y="30" width="26" height="46" rx="3"/><rect x="52" y="30" width="26" height="46" rx="3"/><rect x="320" y="30" width="26" height="46" rx="3"/><rect x="356" y="30" width="26" height="46" rx="3"/><rect x="150" y="18" width="60" height="18" rx="4"/><rect x="150" y="36" width="18" height="50" rx="4"/><circle cx="194" cy="105" r="16"/><line x1="240" y1="30" x2="240" y2="110" stroke="#9d8164" stroke-width="4"/></svg>`;
