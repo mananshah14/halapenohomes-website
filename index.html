@@ -9,6 +9,11 @@
 <meta property="og:title" content="Halapeno Homes — Curated coliving in Ahmedabad">
 <meta property="og:description" content="Handpicked housemates. No curfew. Finally feels like ghar.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://halapenohomes.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:url" content="https://halapenohomes.com/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://halapenohomes.com/">
 <meta name="theme-color" content="#7c714e">
 <link rel="preload" href="assets/fonts/chillax-semibold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/chillax-regular.woff2" as="font" type="font/woff2" crossorigin>
@@ -152,6 +157,64 @@
   .compare .lbl2.a{right:16px;background:rgba(234,220,204,.9);color:var(--brown)}
   .ba .note{margin-top:14px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
 
+  /* ===== YOUR STAY, YOUR WAY ===== */
+  .way{background:var(--ground);padding:clamp(80px,10vw,130px) 0}
+  .way .head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:38px;flex-wrap:wrap}
+  .way h2{font-size:clamp(30px,4vw,56px)}
+  .way h2 .script{font-size:1.2em;color:var(--acc-2)}
+  .choices{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+  .choice{padding:30px 26px 32px;border-right:1px solid var(--hair)}
+  .choice:last-child{border-right:0}
+  .choice .k{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);display:block;margin-bottom:16px}
+  .choice .k::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--acc);margin-right:10px;vertical-align:1px}
+  .choice b{display:block;font-family:var(--display);font-weight:600;font-size:clamp(20px,1.9vw,26px);letter-spacing:-.02em;line-height:1.1;color:var(--ink)}
+  .choice b .script{font-size:1.15em;color:var(--acc-2)}
+  .choice p{margin-top:12px;font-size:13px;color:var(--ink-2);line-height:1.6}
+
+  /* ===== INCLUDED / AT ACTUALS ===== */
+  .incl{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,60px);margin-top:54px;padding-top:40px;border-top:1px solid var(--hair)}
+  .incl h3{font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:-.01em;color:var(--ink);margin-bottom:16px}
+  .incl h3 small{display:block;font-family:var(--sans);font-weight:400;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin-top:6px}
+  .incl ul{list-style:none}
+  .incl li{padding:11px 0;border-top:1px solid var(--hair);font-size:14px;color:var(--ink);display:flex;gap:12px;align-items:baseline}
+  .incl li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--acc);flex-shrink:0;position:relative;top:-2px}
+  .incl li.no::before{background:transparent;border:1px solid var(--acc)}
+  .incl li span{color:var(--ink-2);font-size:12.5px}
+
+  /* ===== STEPS ===== */
+  .steps{background:var(--ground);padding:clamp(80px,10vw,130px) 0}
+  .steps h2{font-size:clamp(30px,4vw,56px)}
+  .steps .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:48px}
+  .step{padding-top:22px;border-top:1px solid var(--hair-2)}
+  .step i{display:block;font-family:var(--display);font-style:normal;font-weight:600;font-size:34px;color:var(--acc);letter-spacing:-.03em;margin-bottom:12px}
+  .step b{display:block;font-family:var(--display);font-weight:600;font-size:18px;color:var(--ink);letter-spacing:-.01em;margin-bottom:8px}
+  .step p{font-size:13.5px;color:var(--ink-2);line-height:1.65}
+
+  /* ===== FAQ ===== */
+  .faq{background:var(--ground-2);padding:clamp(80px,10vw,130px) 0}
+  .faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,5vw,80px);align-items:start}
+  .faq h2{font-size:clamp(30px,4vw,56px)}
+  .faq details{border-top:1px solid var(--hair)}
+  .faq details:last-child{border-bottom:1px solid var(--hair)}
+  .faq summary{list-style:none;cursor:pointer;padding:20px 0;font-family:var(--display);font-weight:600;font-size:17px;color:var(--ink);display:flex;justify-content:space-between;gap:16px;align-items:center}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";color:var(--acc);font-weight:400;font-size:22px;flex-shrink:0;transition:transform .25s}
+  .faq details[open] summary::after{transform:rotate(45deg)}
+  .faq details p{padding:0 0 22px;font-size:14px;color:var(--ink-2);line-height:1.7;max-width:60ch}
+
+  /* ===== COMPOSER (WhatsApp, three taps) ===== */
+  .composer{margin-top:34px;padding:26px 0 0;border-top:1px solid var(--hair);max-width:720px}
+  .composer .q{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin:18px 0 10px}
+  .composer .q:first-child{margin-top:0}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{padding:10px 16px;border-radius:999px;border:1px solid var(--hair-2);background:transparent;color:var(--ink);font-size:12px;letter-spacing:.04em;cursor:pointer;transition:.2s}
+  .chip.on,.chip:hover{background:var(--cream);color:var(--brown);border-color:var(--cream)}
+  .composer .pv{margin-top:18px;font-size:13px;color:var(--ink-2);line-height:1.6;border-left:1px solid var(--acc);padding-left:14px;max-width:56ch}
+  .composer .acts{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+
+  /* ===== MOBILE STICKY CTA ===== */
+  .sticky{display:none}
+
   /* ===== ROSTER ===== */
   .roster{background:var(--ground-2);padding:clamp(80px,10vw,130px) 0}
   .roster .head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:38px;flex-wrap:wrap}
@@ -191,13 +254,22 @@
     .portal{height:150svh}
     .links{display:none}
     .burger{display:flex}
-    .homes .wrap,.ba .wrap{grid-template-columns:1fr}
+    .homes .wrap,.ba .wrap,.faq .wrap{grid-template-columns:1fr}
+    .choices,.steps .grid{grid-template-columns:1fr 1fr}
+    .choice:nth-child(2){border-right:0}
+    .choice:nth-child(-n+2){border-bottom:1px solid var(--hair)}
     .compare{max-height:none}
     .row{grid-template-columns:110px 1fr auto;gap:16px}
     .fold .idx{top:40px;font-size:38vw}
     .orb{right:-30vw;width:70vw;opacity:.32}
   }
   @media (max-width:640px){
+    .choices,.steps .grid,.incl{grid-template-columns:1fr}
+    .choice{border-right:0;border-bottom:1px solid var(--hair);padding:22px 0}
+    .choice:last-child{border-bottom:0}
+    .sticky{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:48;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(84,62,44,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--hair)}
+    .sticky .btn{flex:1;justify-content:center;height:44px}
+    body{padding-bottom:70px}
     .meta.tr,.meta.br{display:none}
     .row{grid-template-columns:1fr auto;padding:18px 0}
     .row .lbl{grid-column:1/-1}
@@ -212,14 +284,14 @@
   <div class="wrap">
     <a href="#top" class="wordmark" id="wm">Halapeno Homes<i>.</i></a>
     <div class="links">
-      <a href="#homes">Homes</a><a href="#roster">The Halapeno way</a><a href="#close">Contact</a>
+      <a href="#homes">Homes</a><a href="#way">Terms</a><a href="#roster">Included</a><a href="#faq">FAQ</a><a href="#close">Contact</a>
     </div>
     <a class="btn solid" id="navBook" target="_blank" rel="noopener" data-wa="Hi Halapeno Homes! I'd like to book a visit.">Book a visit</a>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="menu" id="menu">
-  <a href="#homes">Homes</a><a href="#roster">The Halapeno way</a><a href="#close">Contact</a>
+  <a href="#homes">Homes</a><a href="#way">Terms</a><a href="#roster">Included</a><a href="#faq">FAQ</a><a href="#close">Contact</a>
 </div>
 
 <main id="top">
@@ -297,6 +369,22 @@
   </div>
 </section>
 
+<!-- ===== YOUR STAY, YOUR WAY ===== -->
+<section class="way" id="way">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="lbl acc rv">Your stay, your way</span><h2 class="rv d1" style="margin-top:20px">The terms, in <span class="script">plain words.</span></h2></div>
+      <span class="lbl rv d2">Written into your agreement</span>
+    </div>
+    <div class="choices">
+      <div class="choice rv"><span class="k">Room</span><b>Share a room, or take one for <span class="script">yourself.</span></b><p>Two options, one home. Either way you get your own bed, wardrobe and shelf, and the whole flat is yours to use.</p></div>
+      <div class="choice rv d1"><span class="k">Term</span><b>Eleven months, renewable.</b><p>A three-month minimum stay, then thirty days' notice from either side. Rent is fixed for the term — no mid-way increments.</p></div>
+      <div class="choice rv d2"><span class="k">Access</span><b>A code, not a key.</b><p>Biometric lock with your own access code, deactivated the day you leave. Come and go on your own clock.</p></div>
+      <div class="choice rv d3"><span class="k">Support</span><b>A person, not a ticket.</b><p>Support on working days, 10 am to 7 pm. Water, power or safety emergencies answered at any hour.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== ROSTER ===== -->
 <section class="roster" id="roster">
   <div class="wrap">
@@ -312,6 +400,51 @@
     <div class="row rv"><span class="lbl acc">Security</span><span class="name">Biometric lock &amp; CCTV</span><span class="cnt"><b>24</b>×7</span></div>
     <div class="row rv"><span class="lbl acc">Included</span><span class="name">Housekeeping &amp; Wi-Fi</span><span class="cnt">in the rent</span></div>
     <div class="row rv"><span class="lbl acc">Pricing</span><span class="name">A predefined contract, <span class="script">no surprises.</span></span><span class="cnt"><b>0</b> surprise increments</span></div>
+    <div class="incl">
+      <div class="rv"><h3>In the rent<small>What the monthly charge covers</small></h3><ul>
+        <li>A furnished bed or room, with wardrobe and shelf space</li>
+        <li>High-speed Wi-Fi</li>
+        <li>Housekeeping of the common areas</li>
+        <li>Repairs and maintenance, coordinated for you</li>
+        <li>Biometric-lock access and support</li>
+        <li>Society amenities <span>— pool, gym, courts, per society rules</span></li>
+      </ul></div>
+      <div class="rv d1"><h3>Paid at actuals<small>Not in the rent — we tell you before you sign</small></h3><ul>
+        <li class="no">Your share of the electricity bill</li>
+        <li class="no">LPG, and a cook or house-help if you want one</li>
+        <li class="no">Society move-in charges, where the society asks</li>
+        <li class="no">A refundable security deposit, returned after move-out inspection</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STEPS ===== -->
+<section class="steps" id="steps">
+  <div class="wrap">
+    <span class="lbl acc rv">From hello to move-in</span>
+    <h2 class="rv d1" style="margin-top:20px">Four steps. No brokers in between.</h2>
+    <div class="grid">
+      <div class="step rv"><i>01</i><b>Say hi on WhatsApp</b><p>Tell us when you're moving and what you do. A person replies, not a bot.</p></div>
+      <div class="step rv d1"><i>02</i><b>A short call, and ID</b><p>Fifteen minutes to see if the home and the housemates are a fit. Everyone who lives here went through the same.</p></div>
+      <div class="step rv d2"><i>03</i><b>Visit, or a live video walk-through</b><p>Walk the flat, meet whoever's home, ask anything. Can't make it in person? We'll walk you through on a video call.</p></div>
+      <div class="step rv d3"><i>04</i><b>Sign, get your code, move in</b><p>One agreement with everything in writing. Move-in photos are shared with you on day one, and your access code goes live.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div><span class="lbl acc rv">Questions</span><h2 class="rv d1" style="margin-top:20px">Asked before, <span class="script">answered here.</span></h2><p class="rv d2" style="margin-top:18px;font-size:14px;color:var(--ink-2);max-width:40ch;line-height:1.7">Anything else, ask on WhatsApp — the person who answers is the person who runs the home.</p></div>
+    <div class="rv d1">
+      <details open><summary>Is there really no curfew?</summary><p>Really. The flat has a biometric lock and you have your own code. Safety comes from verified housemates, a gated society and CCTV at the door, not from a gate that locks at ten.</p></details>
+      <details><summary>Who will I be living with?</summary><p>Working professionals and students, mostly in their twenties, co-ed. Every housemate goes through the same ID check and intro call you will, and you can meet whoever's home when you visit.</p></details>
+      <details><summary>What's the minimum stay?</summary><p>Three months. The agreement runs eleven months and can be renewed; after the minimum stay either side can end it with thirty days' notice.</p></details>
+      <details><summary>What do I pay for beyond the rent?</summary><p>Your share of electricity, LPG, and a cook or house-help if you choose to have one, all at actuals. Society move-in charges where the society asks for them. Everything else in the list above is in the rent.</p></details>
+      <details><summary>Can friends or family visit?</summary><p>Yes. The house agrees its own guest hours together, with a heads-up to housemates for overnight stays. Pets aren't permitted.</p></details>
+      <details><summary>How do repairs and emergencies work?</summary><p>Message support on working days between 10 am and 7 pm. A water leak, a power failure or anything to do with safety is answered at any hour on the emergency number you get at move-in.</p></details>
+    </div>
   </div>
 </section>
 
@@ -330,6 +463,16 @@
         <a class="btn" id="mailBtn">Email</a>
       </div>
     </div>
+    <div class="composer rv d2" id="composer">
+      <div class="q">I am a…</div>
+      <div class="chips" data-key="who"><button class="chip on" data-v="working professional">Working professional</button><button class="chip" data-v="student">Student</button><button class="chip" data-v="parent enquiring for my child">Parent enquiring</button></div>
+      <div class="q">Moving in…</div>
+      <div class="chips" data-key="when"><button class="chip on" data-v="as soon as possible">ASAP</button><button class="chip" data-v="within a month">Within a month</button><button class="chip" data-v="in 1–3 months">In 1–3 months</button><button class="chip" data-v="just exploring for now">Just exploring</button></div>
+      <div class="q">I'd like…</div>
+      <div class="chips" data-key="how"><button class="chip on" data-v="to visit in person">To visit in person</button><button class="chip" data-v="a live video walk-through">A video walk-through</button><button class="chip" data-v="to know what's included and the terms first">The terms first</button></div>
+      <p class="pv" id="pv"></p>
+      <div class="acts"><a class="btn solid" id="sendWa" target="_blank" rel="noopener">Send on WhatsApp</a></div>
+    </div>
     <div class="foot">
       <div class="l"><a id="igFoot" target="_blank" rel="noopener">Instagram</a><a id="mailFoot">Email</a><a target="_blank" rel="noopener" data-wa="Hi! I own a flat in Ahmedabad and would like to talk about partnering with Halapeno Homes.">List your flat</a></div>
       <div>© <span id="yr"></span> Halapeno Homes · Ahmedabad</div>
@@ -338,6 +481,10 @@
   </div>
 </section>
 </main>
+<div class="sticky" aria-hidden="false">
+  <a class="btn solid" target="_blank" rel="noopener" data-wa="Hi Halapeno Homes! I'd like to book a visit.">Book a visit</a>
+  <a class="btn" href="#way">The terms</a>
+</div>
 
 <script>
 /* =========================================================
@@ -404,6 +551,14 @@ const menu=$("#menu"); $("#burger").onclick=()=>menu.classList.toggle("open"); $
   addEventListener("scroll",()=>requestAnimationFrame(orbR),{passive:true}); orbR();
 })();
 
+/* ---- composer: three taps → a WhatsApp message in the visitor's own words ---- */
+(function(){
+  const st={who:"working professional",when:"as soon as possible",how:"to visit in person"}, pv=$("#pv"), send=$("#sendWa"); if(!pv) return;
+  const build=()=>{const t=`Hi Halapeno Homes! I'm a ${st.who}, looking to move in ${st.when}. I'd like ${st.how}.`;pv.textContent=t;send.href=wa(t)};
+  $$(".chips").forEach(g=>g.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;$$(".chip",g).forEach(c=>c.classList.toggle("on",c===b));st[g.dataset.key]=b.dataset.v;build()}));
+  build();
+})();
+
 /* ---- before / after: drag the handle; settles to 46% the first time it scrolls into view ---- */
 (function(){
   const el=$("#compare"); if(!el) return; let drag=false;
@@ -438,7 +593,7 @@ if(!reduce){const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersec
   let order=CARDS.map((_,i)=>i), nodes=[];
   el.innerHTML=CARDS.map((c,i)=>c.type
     ?`<article class="card type" data-i="${i}"><span class="code">${c.code}</span>${c.plan?planSvg:""}<h3>${c.h}</h3><p>${c.p}</p><ul>${c.tags.map(t=>`<li>${t}</li>`).join("")}</ul>${c.cta?`<a class="btn solid" style="align-self:flex-start;margin-top:6px" target="_blank" rel="noopener" href="${wa("Hi Halapeno Homes! Please add me to the waitlist for your next Ahmedabad home.")}">Join the waitlist</a>`:""}</article>`
-    :`<article class="card" data-i="${i}"><img src="${c.img}" alt="${c.t}"><span class="code">${c.code}</span><div class="cap"><div><b>${c.t}</b><span>${c.s}</span></div></div></article>`).join("");
+    :`<article class="card" data-i="${i}"><img src="${c.img}" alt="${c.t}" loading="lazy" decoding="async"><span class="code">${c.code}</span><div class="cap"><div><b>${c.t}</b><span>${c.s}</span></div></div></article>`).join("");
   nodes=$$(".card",el);
   dots.innerHTML=CARDS.map(()=>"<i></i>").join("");
   function layout(){
