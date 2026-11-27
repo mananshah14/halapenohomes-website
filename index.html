@@ -170,18 +170,6 @@
   .incl li.no::before{background:transparent;border:1px solid var(--acc)}
   .incl li span{color:var(--ink-2);font-size:12.5px}
 
-  /* ===== FAQ ===== */
-  .faq{background:var(--ground-2);padding:clamp(80px,10vw,130px) 0}
-  .faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,5vw,80px);align-items:start}
-  .faq h2{font-size:clamp(34px,4.6vw,64px)}
-  .faq details{border-top:1px solid var(--hair)}
-  .faq details:last-child{border-bottom:1px solid var(--hair)}
-  .faq summary{list-style:none;cursor:pointer;padding:20px 0;font-family:var(--display);font-weight:600;font-size:17px;color:var(--ink);display:flex;justify-content:space-between;gap:16px;align-items:center}
-  .faq summary::-webkit-details-marker{display:none}
-  .faq summary::after{content:"+";color:var(--acc);font-weight:400;font-size:22px;flex-shrink:0;transition:transform .25s}
-  .faq details[open] summary::after{transform:rotate(45deg)}
-  .faq details p{padding:0 0 22px;font-size:14px;color:var(--ink-2);line-height:1.7;max-width:60ch}
-
   /* ===== COMPOSER (WhatsApp, three taps) ===== */
 
   /* ===== MOBILE STICKY CTA ===== */
@@ -253,7 +241,7 @@
     .portal{height:150svh}
     .links{display:none}
     .burger{display:flex}
-    .homes .wrap,.faq .wrap,.twin{grid-template-columns:1fr}
+    .homes .wrap,.twin{grid-template-columns:1fr}
     .gbody,.gbody.wide{grid-template-columns:1fr}
     .gvideo{position:static}
     .gvideo video{max-height:none;width:auto;max-width:100%;margin:0 auto}
@@ -283,14 +271,14 @@
   <div class="wrap">
     <a href="#top" class="wordmark" id="wm">Halapeno Homes<i>.</i></a>
     <div class="links">
-      <a href="#gallery">Gallery</a><a href="#missed">What's included</a><a href="#faq">FAQ</a><a href="#close">Contact</a>
+      <a href="#gallery">Gallery</a><a href="#missed">What's included</a><a href="#close">Contact</a>
     </div>
     <a class="btn solid" id="navBook" href="#book">Book a viewing</a>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="menu" id="menu">
-  <a href="#gallery">Gallery</a><a href="#missed">What's included</a><a href="#faq">FAQ</a><a href="#close">Contact</a>
+  <a href="#gallery">Gallery</a><a href="#missed">What's included</a><a href="#close">Contact</a>
 </div>
 
 <main id="top">
@@ -408,21 +396,6 @@
           <p class="fine">Opens WhatsApp with your details filled in. Viewings are in person, on a live video call, or we send you the full walk-through video.</p>
         </form>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FAQ ===== -->
-<section class="faq" id="faq">
-  <div class="wrap">
-    <div><span class="lbl acc rv">Questions</span><h2 class="rv d1" style="margin-top:20px">Asked before, <span class="script">answered here.</span></h2><p class="rv d2" style="margin-top:18px;font-size:14px;color:var(--ink-2);max-width:40ch;line-height:1.7">Anything else, ask on WhatsApp — the person who answers is the person who runs the home.</p></div>
-    <div class="rv d1">
-      <details open><summary>Is there really no curfew?</summary><p>Really. The flat has a biometric lock and you have your own code. Safety comes from verified housemates, a gated society and CCTV at the door, not from a gate that locks at ten.</p></details>
-      <details><summary>Who will I be living with?</summary><p>Working professionals and students, mostly in their twenties, co-ed. Every housemate goes through the same ID check and intro call you will, and you can meet whoever's home when you visit.</p></details>
-      <details><summary>What's the minimum stay?</summary><p>Three months. The agreement runs eleven months and can be renewed; after the minimum stay either side can end it with thirty days' notice.</p></details>
-      <details><summary>What do I pay for beyond the rent?</summary><p>Your share of electricity, LPG, and a cook or house-help if you choose to have one, all at actuals. Society move-in charges where the society asks for them. Everything else under What's included is in the rent.</p></details>
-      <details><summary>Can friends or family visit?</summary><p>Yes. The house agrees its own guest hours together, with a heads-up to housemates for overnight stays. Pets aren't permitted.</p></details>
-      <details><summary>How do repairs and emergencies work?</summary><p>Message support on working days between 10 am and 7 pm. A water leak, a power failure or anything to do with safety is answered at any hour on the emergency number you get at move-in.</p></details>
     </div>
   </div>
 </section>
